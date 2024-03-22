@@ -1,10 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Floral</title>
+  <link rel="stylesheet" href="deps/styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+<header class="main-header">
+  <nav class="main-navigation">
+    <a class="main-navigation__logo" href="#">
+      <img src="deps/icons/logo-black.svg" alt="логотип компании">
+    </a>
+    <ul class="main-navigation__navigation-list">
+      <li class="navigation-list-item"><a href="#">О нас</a></li>
 
+      <li class="navigation-list-item search">
+        <label>
+          <input class="site-navigation__form-input-search" placeholder="Поиск">
+        </label>
+      </li>
+
+      <li class="navigation-list-item">
+        <a class="dropdown-toggle" href="#">
+          Личный кабинет
+        </a>
+        <ul class="main-navigation__dropdown-menu">
+          <li><a class="main-navigation__dropdown-menu-item" href="#">Доставка и оплата</a></li>
+          <li><a class="main-navigation__dropdown-menu-item" href="#">Контактная информация</a></li>
+          <li><a class="main-navigation__dropdown-menu-item" href="#">Про нас</a></li>
+        </ul>
+      </li>
+
+      <li class="navigation-list-item"><a href="#">Корзина</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="hero__main-background" src="deps/img/main-background.jpg" alt="фото цветов">
+    <img class="hero__logo" src="deps/icons/logo-white.svg" alt="логотип компании">
+    <h1>Комнатные растения и цветы</h1>
+  </section>
+
+  <section class="category">
+    <ul class="category__list">
+      <li class="category__list-item">
+        <a href="#">
+          <img src ="deps/img/category/blooming.png" alt="Цветущие растения">
+          <p>Цветущие растения</p>
+        </a>
+      </li>
+      <li class="category__list-item">
+        <a href="#">
+          <img src ="deps/img/category/deciduous.png" alt="Лиственные растения">
+          <p>Лиственные растения</p>
+        </a>
+      </li>
+      <li class="category__list-item">
+        <a href="#">
+          <img src ="deps/img/category/fruit.png" alt="Плодовые растения">
+          <p>Плодовые растения</p>
+        </a>
+      </li>
+      <li class="category__list-item">
+        <a href="#">
+          <img src ="deps/img/category/cactuses.png" alt="Кактусы и суккуленты">
+          <p>Кактусы и суккуленты</p>
+        </a>
+      </li>
+      <li class="category__list-item">
+        <a href="#">
+          <img src ="deps/img/category/pots.png" alt="Горшки и кашпо">
+          <p>Горшки и кашпо</p>
+        </a>
+      </li>
+      <li class="category__list-item">
+       <div class="category__list-item__links">
+         <a class="category__link all-goods" href="#">Все товары</a>
+         <a class="category__link sales-goods" href="#">Товары со скидкой</a>
+       </div>
+      </li>
+    </ul>
+  </section>
+</main>
+<footer class="main-footer">
+  <p>Made by “Бригада Cripples”</p>
+</footer>
 </body>
 </html>
