@@ -1,10 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Floral</title>
+  <link rel="stylesheet" href="deps/styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
+<header class="main-header">
+  <nav class="main-navigation">
+    <a class="logo" href="#">
+      <img src="deps/icons/logo-black.svg" alt="логотип компании">
+    </a>
+    <ul class="site-navigation">
+      <li class="site-navigation-item"><a href="#">О нас</a></li>
 
+      <li class="site-navigation-item search">
+        <form role="search">
+          <input class="form-input-search" placeholder="Поиск">
+        </form>
+      </li>
+
+      <li class="site-navigation-item">
+        <a class="dropdown-toggle" href="#">
+          Личный кабинет
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Доставка и оплата</a></li>
+          <li><a class="dropdown-item" href="#">Контактная информация</a></li>
+          <li><a class="dropdown-item" href="#">Про нас</a></li>
+        </ul>
+      </li>
+
+      <li class="site-navigation-item"><a href="#">Корзина</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="deps/icons/logo-white.svg" alt="логотип компании">
+    <h1>Комнатные растения и цветы</h1>
+    <img src="icons/main_photo.jpg" alt="фото цветов">
+  </section>
+
+  <section class="catalog">
+    <ul class="catalog-list">
+      <li class="catalog-list-item">
+        <img src ="img/goods/" alt="Цветущие растения">
+        <p>Цветущие растения</p>
+      </li>
+      <li class="catalog-list-item">
+        <img src ="img/goods/" alt="Лиственные растения">
+        <p>Лиственные растения</p>
+      </li>
+      <li class="catalog-list-item">
+        <img src ="img/goods/" alt="Плодовые растения">
+        <p>Плодовые растения</p>
+      </li>
+      <li class="catalog-list-item">
+        <img src ="img/goods/" alt="Кактусы и суккуленты">
+        <p>Кактусы и суккуленты</p>
+      </li>
+      <li class="catalog-list-item">
+        <img src ="img/goods/" alt="Горшки и кашпо">
+        <p>Горшки и кашпо</p>
+      </li>
+      <li class="catalog-list-item">
+       <div>
+          <a href="#">Все товары</a>
+          <a href="#">Товары со скидкой</a>
+       </div>
+      </li>
+    </ul>
+  </section>
+</main>
+<footer class="main-footer">
+  <p>Made by “Бригада Cripples”</p>
+</footer>
 </body>
 </html>
