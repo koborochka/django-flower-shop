@@ -9,19 +9,8 @@ ul{
     margin:0;
     padding: 0;
 }
-p{
+p, h1{
     margin: 0;
-}
-h1{
-    margin: 0;
-    font-weight: 600;
-    font-size: 64px;
-    line-height: 75px;
-    align-self: center;
-    color: white;
-    position: absolute;
-    top: 185px;
-    left: 198px;
 }
 
 
@@ -39,7 +28,6 @@ h1{
     text-decoration: none;
     color: inherit;
 }
-
 .main-navigation__navigation-list{
     display: flex;
     gap: 10px;
@@ -47,7 +35,6 @@ h1{
 .navigation-list-item{
     border: 1px solid black;
     border-radius: 10px;
-    vertical-align: middle;
     padding: 10px 23px;
     height: 26px;
 }
@@ -86,12 +73,22 @@ h1{
     position: relative;
     margin: 60px auto 0;
 }
+.hero__title{
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 75px;
+    align-self: center;
+    color: white;
+    position: absolute;
+    top: 185px;
+    left: 198px;
+}
 .hero__logo{
     position: absolute;
     top: 95px;
     left: 561px;
 }
-.hero__main-background{
+.hero__background{
     width: 1320px;
     height: 390px;
     object-fit: cover;
@@ -105,7 +102,7 @@ h1{
 
 
 .category{
-    margin: 40px auto 0;
+    margin: 40px auto 90px;
     width: 1320px;
 }
 .category__list{
@@ -163,10 +160,9 @@ h1{
 }
 
 .main-footer{
-    margin-top: 90px;
     height: 40px;
     background-color: #E1E7E0;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
