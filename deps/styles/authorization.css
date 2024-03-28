@@ -48,7 +48,7 @@
     flex-direction: column;
     gap: 50px;
 }
-.login-form__input-section > div{
+.login-form__input-section .wrapper{
     display: flex;
     flex-direction: column;
     gap: 16px;
