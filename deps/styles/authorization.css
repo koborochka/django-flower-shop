@@ -1,0 +1,111 @@
+.authorization{
+    width: 1320px;
+    height: 800px;
+    margin: 60px auto 0;
+    position: relative;
+}
+.authorization__background{
+    width: 1320px;
+    height: 800px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    position: absolute;
+    filter: brightness(0.7);
+    border-radius: 10px;
+
+}
+
+.authorization__container{
+    position: absolute;
+    width: 710px;
+    height: 630px;
+    border-radius: 20px;
+    background-color: white;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* центровка */
+    display: flex;
+    flex-direction: column;
+}
+
+.authorization__container-title{
+    margin: 52px auto 0;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 47px;
+}
+
+.login-form{
+    width: 615px;
+    height: 400px;
+    margin: 60px auto 0;
+}
+.login-form__input-section{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.login-form__input-section > div{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-label{
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.form-input{
+    box-sizing: border-box;
+    padding: 16px 0 16px 19px;
+    display: block;
+    width: 610px;
+    height: 60px;
+    font-family: inherit;
+    font-size: 24px;
+    line-height: 28px;
+    color: #96A694;
+    border: 1px solid #96A694;
+    border-radius: 10px;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login-form__wrapper{
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    gap: 25px;
+}
+.log-in-button{
+    display: block;
+    width: 164px;
+    height: 60px;
+    border: #5C9459 1px solid;
+    border-radius: 10px;
+    padding: 12px 19px;
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+    background-color: #5C9459;
+    color: white;
+}
+.login-form__refs-wrapper{
+    width: 425px;
+    height: 48px;
+    gap: 25px;
+
+}
+.login-form__ref{
+    display: inline-block;
+    padding: 10px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+}
