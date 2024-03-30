@@ -72,7 +72,7 @@
     border: 2px solid #A8C2A5;
 }
 .order-card__checkbox:checked+.order-card__custom-checkbox {
-    background-image: url("../../deps/icons/checkbox-checked.svg");
+    background-image: url("../icons/checkbox-checked.svg");
     background-position: center;
     background-repeat: no-repeat;
 }

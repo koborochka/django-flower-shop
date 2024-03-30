@@ -1,0 +1,204 @@
+.my-profile{
+    width: 1440px;
+    height: 800px;
+    margin: 60px auto 0;
+    position: relative;
+}
+
+.my-profile__background{
+    width: 1440px;
+    height: 800px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    position: absolute;
+    filter: brightness(0.7);
+    border-radius: 10px;
+}
+.my-profile__container{
+    position: absolute;
+    width: 1320px;
+    height: 700px;
+
+    top: 60px;
+    left: 60px;
+    display: flex;
+    gap: 30px;
+}
+
+.my-profile__info, .my-profile__my-orders{
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.my-profile__info{
+    width: 740px;
+    height: 700px;
+}
+.my-profile__my-orders{
+    width: 550px;
+    height: 700px;
+}
+
+.my-profile__info-title, .my-profile__my-orders-title{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 42px;
+    margin: 30px auto 0;
+}
+
+.info-container{
+    margin: 40px auto 0;
+    width: 640px;
+    height: 455px;
+}
+
+.info-container__input-section, .info-container__input-section .wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.info-container__input-section{
+    gap: 20px;
+}
+.info-container__input-section .wrapper{
+    gap: 10px;
+}
+
+.form-label{
+    font-size: 24px;
+    line-height: 28px;
+}
+.form-input{
+    box-sizing: border-box;
+    padding: 16px 0 16px 19px;
+    display: block;
+    width: 640px;
+    height: 60px;
+    font-family: inherit;
+    font-size: 24px;
+    line-height: 28px;
+    color: #96A694;
+    border: 1px solid #96A694;
+    border-radius: 10px;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.my-profile__info__save-button{
+    width: 164px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #5C9459;
+    color: white;
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 30px auto 0;
+    border: #5C9459 1px solid;
+}
+
+.my-profile__my-orders__order-list{
+    margin: 45px auto 0;
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.order-form{
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    padding: 15px 21px;
+    border: 1px solid black;
+}
+
+.order-form__main-info{
+    display: flex;
+    justify-content: space-between;
+}
+.order-form__main-info .wrapper{
+    display: flex;
+    gap: 12px;
+}
+.order-form__main-info .wrapper p{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+}
+.order-form__main-info__order-date{
+    font-size: 16px;
+    line-height: 19px;
+}
+.order-form__expand-button{
+    width: 23px;
+    height: 23px;
+    border: none;
+    background-color: white;
+    background-image: url("../icons/expand-button.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.order-form__expand-button_active{
+    background-color: #E0E7DF;
+    background-image: url("../icons/expand-button_active.svg");
+}
+.order-form__full-info_visually-hidden{
+    display: none;
+}
+
+.order-form_brief{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.order-form_full{
+    background-color: #E0E7DF;
+    border-radius: 10px;
+    border: none;
+}
+
+.order-form__full-info{
+    margin-top: 22px;
+    background-color: white;
+    border-radius: 10px;
+}
+.order-form__full-info__orders-list{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 19px;
+
+    padding: 16px;
+    gap: 19px;
+}
+.order-form__full-info__orders-list__goods{
+    display: flex;
+    justify-content: space-between;
+
+}
+.goods__name{
+    width: 125px;
+    font-weight: 600;
+}
+
+.order-form__full-info hr{
+    height: 2px;
+    background-color: #E0E7DF;
+    border: none;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+.order-form__full-info .wrapper{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 16px;
+}
+
+h3,p{
+    margin: 0;
+}
