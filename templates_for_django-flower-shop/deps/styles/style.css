@@ -27,6 +27,7 @@ p, h1{
 .main-navigation a{
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
 }
 .main-navigation__navigation-list{
     display: flex;
@@ -62,10 +63,64 @@ p, h1{
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.personal-cabinet{
+    width: 162px;
+    display: block;
+    position: relative;
+}
+.personal-cabinet__button{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 11px 25px;
+    display: block;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    background-clip: padding-box;
+    cursor: pointer;
+}
 .main-navigation__dropdown-menu{
-    display: none;
+    position: absolute;
+    left: 0;
+    top: 53px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 210px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    align-items: center;
+    z-index: 99;
 }
 
+.main-navigation__dropdown-menu-item{
+    box-sizing: border-box;
+    width: 200px;
+    height: 43px;
+    padding: 0 10px;
+    background-image: url("../icons/personal-cabinet-refs-button.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.main-navigation__dropdown-menu-item a{
+    display: block;
+    cursor: pointer;
+    line-height: 40px;
+
+}
+
+.visually-hidden{
+    display: none;
+}
 
 .hero{
     width: 1320px;
@@ -98,6 +153,7 @@ p, h1{
     position: absolute;
     filter: brightness(0.5);
     border-radius: 10px;
+    z-index: -1;
 }
 
 
