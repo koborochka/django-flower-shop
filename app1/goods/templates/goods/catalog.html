@@ -20,74 +20,23 @@
         </section>
 
         <section class="goods">
-        <ul class="goods-category-list">
-            <li class="goods-category-list__item">
-            <a href="#">
-                <img src ="deps/img/goods/kalanchoe_2.png" height="250" width="250" alt="Каланхоэ каландива микс">
-            </a>
-            <p class="goods-info__id">Арт. 529360177</p>
-            <p class="goods-info__title">Каланхоэ каландива микс</p>
-            <div class="goods-price">
-                <p class="goods-price__new goods-sale">585₽</p>
-                <p class="goods-price__old">650₽</p>
-            </div>
-                <button class="button__add-to-cart" type="button">В корзину</button>
-            </li>
-
-            <li class="goods-category-list__item">
-            <a href="#">
-                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-                <p class="goods-info__id">Арт. 126383293</p>
-                <p class="goods-info__title">Каланхое махровый микс</p>
-                <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-                </div>
-                <button class="button__add-to-cart" type="button">В корзину</button>
-            </li>
-
-            <li class="goods-category-list__item">
-            <a href="#">
-                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-                <p class="goods-info__id">Арт. 126383293</p>
-                <p class="goods-info__title">Каланхое махровый микс</p>
-                <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-                </div>
-                <button class="button__add-to-cart" type="button">В корзину</button>
-            </li>
-
-            <li class="goods-category-list__item">
-            <a href="#">
-                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-                <p class="goods-info__id">Арт. 126383293</p>
-                <p class="goods-info__title">Каланхое махровый микс</p>
-                <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-                </div>
-                <button class="button__add-to-cart" type="button">В корзину</button>
-            </li>
-
-            <li class="goods-category-list__item">
-            <a href="#">
-                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-                <p class="goods-info__id">Арт. 126383293</p>
-                <p class="goods-info__title">Каланхое махровый микс</p>
-                <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-                </div>
-                <button class="button__add-to-cart" type="button">В корзину</button>
-            </li>
-        </ul>
+            <ul class="goods-category-list">
+                {% for product in goods %}
+                    <li class="goods-category-list__item">
+                        <a href="#">
+                            <img src ="{% static product.image %}" height="250" width="250" alt="{{ product.name }}">
+                        </a>
+                        <p class="goods-info__id">Арт. {{ product.article }}</p>
+                        <p class="goods-info__title">{{ product.name }}</p>
+                        <div class="goods-price">
+                            <p class="goods-price__new goods-sale">{{ product.price }}</p>
+                            {% comment %} <p class="goods-price__old">{{ product.price }}</p> {% endcomment %}
+                        </div>
+                        <button class="button__add-to-cart" type="button">В корзину</button>
+                    </li>
+                {% endfor %}
+            </ul>
         </section>
-
     </main>
 {% endblock %}
 
