@@ -1,0 +1,98 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/styles/catalog.css" %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="category-header">
+        <h2 class="category-heading">Название категории</h2>
+        <div class="navigation-list-item">
+            <p class="personal-cabinet__button-filters filters">Фильтры</p>
+            <!-- <ul class="category-heading__dropdown-filters">
+            <li class="category-heading__dropdown-filters-item">Доставка и оплата</li>
+            <li class="category-heading__dropdown-filters-item">Контактная информация</li>
+            <li class="category-heading__dropdown-filters-item">Про нас</li>
+            </ul> -->
+        </div>
+        </section>
+
+        <section class="goods">
+        <ul class="goods-category-list">
+            <li class="goods-category-list__item">
+            <a href="#">
+                <img src ="deps/img/goods/kalanchoe_2.png" height="250" width="250" alt="Каланхоэ каландива микс">
+            </a>
+            <p class="goods-info__id">Арт. 529360177</p>
+            <p class="goods-info__title">Каланхоэ каландива микс</p>
+            <div class="goods-price">
+                <p class="goods-price__new goods-sale">585₽</p>
+                <p class="goods-price__old">650₽</p>
+            </div>
+                <button class="button__add-to-cart" type="button">В корзину</button>
+            </li>
+
+            <li class="goods-category-list__item">
+            <a href="#">
+                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+            </a>
+                <p class="goods-info__id">Арт. 126383293</p>
+                <p class="goods-info__title">Каланхое махровый микс</p>
+                <div class="goods-price">
+                <p class="goods-price__new">585₽</p>
+                <p class="goods-price__old"></p>
+                </div>
+                <button class="button__add-to-cart" type="button">В корзину</button>
+            </li>
+
+            <li class="goods-category-list__item">
+            <a href="#">
+                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+            </a>
+                <p class="goods-info__id">Арт. 126383293</p>
+                <p class="goods-info__title">Каланхое махровый микс</p>
+                <div class="goods-price">
+                <p class="goods-price__new">585₽</p>
+                <p class="goods-price__old"></p>
+                </div>
+                <button class="button__add-to-cart" type="button">В корзину</button>
+            </li>
+
+            <li class="goods-category-list__item">
+            <a href="#">
+                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+            </a>
+                <p class="goods-info__id">Арт. 126383293</p>
+                <p class="goods-info__title">Каланхое махровый микс</p>
+                <div class="goods-price">
+                <p class="goods-price__new">585₽</p>
+                <p class="goods-price__old"></p>
+                </div>
+                <button class="button__add-to-cart" type="button">В корзину</button>
+            </li>
+
+            <li class="goods-category-list__item">
+            <a href="#">
+                <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+            </a>
+                <p class="goods-info__id">Арт. 126383293</p>
+                <p class="goods-info__title">Каланхое махровый микс</p>
+                <div class="goods-price">
+                <p class="goods-price__new">585₽</p>
+                <p class="goods-price__old"></p>
+                </div>
+                <button class="button__add-to-cart" type="button">В корзину</button>
+            </li>
+        </ul>
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block footer %}
+    <footer class="main-footer">
+        <p>Made by “Бригада Cripples”</p>
+    </footer>
+{% endblock %}

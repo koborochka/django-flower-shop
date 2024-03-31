@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ title }}</title>
+  {% block css %}{% endblock %}
   <link rel="stylesheet" href="{% static "deps/styles/style.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="{% static "deps/scripts/script.js" %}" defer></script>
@@ -45,7 +46,9 @@
     </ul>
   </nav>
 </header>
-{% block content %}{% endblock %}
+<main>
+  {% block content %}{% endblock %}
+</main>
 {% block footer %}{% endblock %}
 </body>
 </html>
