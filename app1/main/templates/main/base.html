@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  {% block css %}{% endblock %}
+  <link rel="stylesheet" href="{% static "deps/styles/style.css" %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="{% static "deps/scripts/script.js" %}" defer></script>
+</head>
+<body>
+<header class="main-header">
+  <nav class="main-navigation">
+    <a class="main-navigation__logo" href="{% url "main:index" %}">
+      <img src="{% static "deps/icons/logo-black.svg" %}" alt="логотип компании">
+    </a>
+    <ul class="main-navigation__navigation-list">
+      <li class="navigation-list-item"><a href="{% url "main:about" %}">О нас</a></li>
+
+      <li class="navigation-list-item search">
+        <label>
+          <input class="site-navigation__form-input-search" placeholder="Поиск">
+        </label>
+      </li>
+
+      <li class="navigation-list-item personal-cabinet">
+        <button class="personal-cabinet__button">
+          Личный кабинет
+        </button>
+        <ul class="main-navigation__dropdown-menu visually-hidden">
+          <li class="main-navigation__dropdown-menu-item">
+            <a href="my-profile.html">Мой профиль</a>
+          </li>
+          <li class="main-navigation__dropdown-menu-item">
+            <a href="authorization.html">Войти</a>
+          </li>
+          <li class="main-navigation__dropdown-menu-item">
+            <a href="#">Выйти</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="navigation-list-item"><a href="basket.html">Корзина</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  {% block content %}{% endblock %}
+</main>
+{% block footer %}{% endblock %}
+</body>
+</html>

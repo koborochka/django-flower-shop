@@ -1,0 +1,42 @@
+[
+{
+  "model": "goods.categories",
+  "pk": 4,
+  "fields": {
+    "name": "Цветущие растения",
+    "slug": "cvetushie-rasteniya"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 5,
+  "fields": {
+    "name": "Лиственные растения",
+    "slug": "listvennye-rasteniya"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 6,
+  "fields": {
+    "name": "Плодовые растения",
+    "slug": "plodovye-rasteniya"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 7,
+  "fields": {
+    "name": "Кактусы и суккуленты",
+    "slug": "kaktusy-i-sukkulenty"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 8,
+  "fields": {
+    "name": "Горшки и кашпо",
+    "slug": "gorshki-i-kashpo"
+  }
+}
+]
