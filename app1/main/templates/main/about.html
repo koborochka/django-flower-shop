@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+  <main>
+    <section class="hero">
+      <img class="hero__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
+      <img class="hero__logo" src="{% static "deps/icons/logo-white.svg" %}" alt="логотип компании">
+      <h2 class="hero__title">{{ content }}</h2>
+    </section>
+  </main>
+{% endblock %}
+
+{% block footer %}
+  <footer class="main-footer">
+    <p>Made by “Бригада Cripples”</p>
+  </footer>
+{% endblock %}

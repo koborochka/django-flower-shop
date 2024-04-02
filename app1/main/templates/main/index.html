@@ -1,0 +1,55 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+{% load goods_tags %}
+
+{% block content %}
+    <section class="hero">
+      <img class="hero__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
+      <img class="hero__logo" src="{% static "deps/icons/logo-white.svg" %}" alt="логотип компании">
+      <h1 class="hero__title">{{ content }}</h1>
+    </section>
+
+    {% comment %} далее дичайший костыль, отрубить руки такому программисту 
+    нврн лучше ебануть в goods/model.py/Categories в class Categories поле is_special 
+    и потом {% if category.is_special %} . . .
+    но лучше пока не переделывать этот класс, может всё наебнуться
+
+    В админ панеле в Категории должны быть Товары со скидкой и Все товары, пока удалил
+
+    __________
+    cats.json: python manage.py dumpdata goods.Categories --indent 2 --output fixtures/goods/cats.json
+    {% endcomment %}
+    <section class="category">
+      <ul class="category__list">
+        
+        {% tag_categories as categories %}
+        {% for category in categories %}
+          <li class="category__list-item">
+            <a href={% url "catalog:index" %}>
+              {% if category.image %}
+                <img src ="{{ category.image.url }}" alt="{{ category.name }}">
+              {% else %}
+                <img src ="{% static "deps/img/not-found-image.jpg" %}" alt="{{ category.name }}">
+              {% endif %}
+              <p>{{ category.name }}</p>
+            </a>
+          </li>
+        {% endfor %}
+
+        </li>
+        <li class="category__list-item">
+          <div class="category__list-item__links">
+            <a class="category__link all-goods" href={% url "catalog:index" %}>Все товары</a>
+            <a class="category__link sales-goods" href={% url "catalog:index" %}>Товары со скидкой</a>
+          </div>
+        </li> 
+      </ul>
+    </section>
+{% endblock %}
+
+{% block footer %}
+  <footer class="main-footer">
+    <p>Made by “Бригада Cripples”</p>
+  </footer>
+{% endblock %}
