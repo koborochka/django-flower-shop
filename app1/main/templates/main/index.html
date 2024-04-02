@@ -10,14 +10,7 @@
       <h1 class="hero__title">{{ content }}</h1>
     </section>
 
-    {% comment %} далее дичайший костыль, отрубить руки такому программисту 
-    нврн лучше ебануть в goods/model.py/Categories в class Categories поле is_special 
-    и потом {% if category.is_special %} . . .
-    но лучше пока не переделывать этот класс, может всё наебнуться
-
-    В админ панеле в Категории должны быть Товары со скидкой и Все товары, пока удалил
-
-    __________
+    {% comment %} 
     cats.json: python manage.py dumpdata goods.Categories --indent 2 --output fixtures/goods/cats.json
     {% endcomment %}
     <section class="category">
@@ -26,7 +19,7 @@
         {% tag_categories as categories %}
         {% for category in categories %}
           <li class="category__list-item">
-            <a href={% url "catalog:index" %}>
+            <a href={% url "catalog:index" category.slug %}>
               {% if category.image %}
                 <img src ="{{ category.image.url }}" alt="{{ category.name }}">
               {% else %}
@@ -37,13 +30,13 @@
           </li>
         {% endfor %}
 
-        </li>
         <li class="category__list-item">
           <div class="category__list-item__links">
-            <a class="category__link all-goods" href={% url "catalog:index" %}>Все товары</a>
-            <a class="category__link sales-goods" href={% url "catalog:index" %}>Товары со скидкой</a>
+            <a class="category__link all-goods" href={% url "catalog:index" 'all' %}>Все товары</a> 
+            <a class="category__link sales-goods" href={% url "catalog:index" 'sales' %}>Товары со скидкой</a>
           </div>
         </li> 
+
       </ul>
     </section>
 {% endblock %}
