@@ -24,15 +24,13 @@
                 {% for product in goods %}
                     <li class="goods-category-list__item">
 
-                        {% if product.image %}
-                            <a href="#">
+                        <a href="{% url "catalog:product" product.slug %}">
+                            {% if product.image %}
                                 <img src ="{{ product.image.url }}" height="250" width="250" alt="{{ product.name }}">
-                            </a>
-                        {% else %}
-                            <a href="#">
+                            {% else %}
                                 <img src ="{% static "deps/img/not-found-image.jpg" %}" height="250" width="250" alt="{{ product.name }}">
-                            </a>
-                        {% endif %}
+                            {% endif %}
+                        </a>
 
                         <p class="goods-info__id">Арт. {{ product.display_id }}</p>
                         <p class="goods-info__title">{{ product.name }}</p>
