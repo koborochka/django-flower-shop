@@ -23,15 +23,29 @@
             <ul class="goods-category-list">
                 {% for product in goods %}
                     <li class="goods-category-list__item">
-                        <a href="#">
-                            <img src ="{% static product.image %}" height="250" width="250" alt="{{ product.name }}">
-                        </a>
-                        <p class="goods-info__id">Арт. {{ product.article }}</p>
+
+                        {% if product.image %}
+                            <a href="#">
+                                <img src ="{{ product.image.url }}" height="250" width="250" alt="{{ product.name }}">
+                            </a>
+                        {% else %}
+                            <a href="#">
+                                <img src ="{% static "deps/img/not-found-image.jpg" %}" height="250" width="250" alt="{{ product.name }}">
+                            </a>
+                        {% endif %}
+
+                        <p class="goods-info__id">Арт. {{ product.display_id }}</p>
                         <p class="goods-info__title">{{ product.name }}</p>
+
                         <div class="goods-price">
-                            <p class="goods-price__new goods-sale">{{ product.price }}</p>
-                            {% comment %} <p class="goods-price__old">{{ product.price }}</p> {% endcomment %}
+                            {% if product.discount != 0 %}
+                                <p class="goods-price__new goods-sale">{{ product.sell_price }}</p>
+                                <p class="goods-price__old">{{ product.price }}</p>
+                            {% else %}
+                                <p class="goods-price__new">{{ product.price }}</p>
+                            {% endif %}
                         </div>
+                        
                         <button class="button__add-to-cart" type="button">В корзину</button>
                     </li>
                 {% endfor %}

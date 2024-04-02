@@ -10,7 +10,6 @@ def index(request):
     context = {
         'title': 'Floral - Главная',
         'content': "Комнатные растения и цветы",
-        'categories': categories
     }
 
     return render(request, 'main/index.html', context)

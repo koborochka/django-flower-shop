@@ -1,6 +1,7 @@
 {% extends "main/base.html" %}
 
 {% load static %}
+{% load goods_tags %}
 
 {% block content %}
     <section class="hero">
@@ -21,10 +22,16 @@
     {% endcomment %}
     <section class="category">
       <ul class="category__list">
+        
+        {% tag_categories as categories %}
         {% for category in categories %}
           <li class="category__list-item">
             <a href={% url "catalog:index" %}>
-              <img src ="{% static "deps/img/category/blooming.png" %}" alt="{{ category.name }}">
+              {% if category.image %}
+                <img src ="{{ category.image.url }}" alt="{{ category.name }}">
+              {% else %}
+                <img src ="{% static "deps/img/not-found-image.jpg" %}" alt="{{ category.name }}">
+              {% endif %}
               <p>{{ category.name }}</p>
             </a>
           </li>
