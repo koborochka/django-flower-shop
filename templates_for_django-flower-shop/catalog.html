@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="deps/styles/catalog.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="deps/scripts/script.js" defer></script>
+  <script src="deps/scripts/catalog.js" defer></script>
 </head>
 <body>
   <header class="main-header">
@@ -48,13 +49,13 @@
   <main>
       <section class="category-header">
         <h2 class="category-heading">Название категории</h2>
-        <div class="">
+        <div class="wrapper">
           <button class="personal-cabinet__button-filters filters">Фильтры</button>
-          <div class="category-header__dropdown-filters ">
+          <div class="category-header__dropdown-filters visually-hidden">
             <div class="category-header__dropdown-filters__filter-item filter-item">
               <label>
-                <input class="filter-item__checkbox" type="checkbox" name="sale" value="sale">
-                <div class="filter-item__custom-checkbox"></div>
+                <input class="filter-item__checkbox filter-box" type="checkbox" name="sale" value="sale">
+                <div class="filter-item__custom-checkbox custom-filter-box"></div>
                 <p class="filter-item__filter-name">Товары по акции</p>
               </label>
             </div>
@@ -62,22 +63,22 @@
             <ul class="category-header__dropdown-filters__filter-list filter-list">
               <li class="filter-list__filter-item filter-item">
                 <label>
-                  <input class="filter-item__radiobutton" type="radio" name="sort" value="default">
-                  <div class="filter-item__custom-radiobutton"></div>
+                  <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="default" checked>
+                  <div class="filter-item__custom-radiobutton custom-filter-box"></div>
                   <p class="filter-item__filter-name">По умолчанию</p>
                 </label>
               </li>
               <li class="filter-list__filter-item filter-item">
                 <label>
-                  <input class="filter-item__radiobutton" type="radio" name="sort" value="increase">
-                  <div class="filter-item__custom-radiobutton"></div>
+                  <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="increase">
+                  <div class="filter-item__custom-radiobutton custom-filter-box"></div>
                   <p class="filter-item__filter-name">Увеличение цены</p>
                 </label>
               </li>
               <li class="filter-list__filter-item filter-item">
                 <label>
-                  <input class="filter-item__radiobutton" type="radio" name="sort" value="decrease">
-                  <div class="filter-item__custom-radiobutton"></div>
+                  <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="decrease">
+                  <div class="filter-item__custom-radiobutton custom-filter-box"></div>
                   <p class="filter-item__filter-name">Уменьшение цены</p>
                 </label>
               </li>
