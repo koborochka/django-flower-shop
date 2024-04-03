@@ -8,7 +8,27 @@
 .filters{
     width: 275px;
     text-align: center;
+
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 23px;
+    height: 26px;
+
+    display: block;
+    background-color: transparent;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background-clip: padding-box;
+    cursor: pointer;
 }
+
+.category-header__dropdown-filters{
+    width: 275px;
+}
+
 .goods{
     width: 1260px;
     margin: 0 auto;
