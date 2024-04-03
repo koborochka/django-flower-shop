@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Корзина</title>
-    <link rel="stylesheet" href="deps/styles/style.css">
-    <link rel="stylesheet" href="deps/styles/basket.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="deps/scripts/script.js" defer></script>
+	<meta charset="UTF-8">
+	<title>Корзина</title>
+	<link rel="stylesheet" href="deps/styles/style.css">
+	<link rel="stylesheet" href="deps/styles/basket.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<script src="deps/scripts/script.js" defer></script>
 </head>
+
 <body>
-<header class="main-header">
-    <nav class="main-navigation">
-        <a class="main-navigation__logo" href="index.html">
-            <img src="deps/icons/logo-black.svg" alt="логотип компании">
-        </a>
-        <ul class="main-navigation__navigation-list">
-            <li class="navigation-list-item"><a href="#">О нас</a></li>
+	<header class="main-header">
+		<nav class="main-navigation">
+			<a class="main-navigation__logo" href="index.html">
+				<img src="deps/icons/logo-black.svg" alt="логотип компании">
+			</a>
+			<ul class="main-navigation__navigation-list">
+				<li class="navigation-list-item"><a href="#">О нас</a></li>
 
-            <li class="navigation-list-item search">
-                <label>
-                    <input class="site-navigation__form-input-search" placeholder="Поиск">
-                </label>
-            </li>
+				<li class="navigation-list-item search">
+					<label>
+						<input class="site-navigation__form-input-search" placeholder="Поиск">
+					</label>
+				</li>
 
-            <li class="navigation-list-item personal-cabinet">
-                <button class="personal-cabinet__button">
-                    Личный кабинет
-                </button>
-                <ul class="main-navigation__dropdown-menu visually-hidden">
-                    <li class="main-navigation__dropdown-menu-item">
-                        <a href="my-profile.html">Мой профиль</a>
-                    </li>
-                    <li class="main-navigation__dropdown-menu-item">
-                        <a href="authorization.html">Войти</a>
-                    </li>
-                    <li class="main-navigation__dropdown-menu-item">
-                        <a href="#">Выйти</a>
-                    </li>
-                </ul>
-            </li>
+				<li class="navigation-list-item personal-cabinet">
+					<button class="personal-cabinet__button">
+						Личный кабинет
+					</button>
+					<ul class="main-navigation__dropdown-menu visually-hidden">
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="my-profile.html">Мой профиль</a>
+						</li>
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="authorization.html">Войти</a>
+						</li>
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="#">Выйти</a>
+						</li>
+					</ul>
+				</li>
 
-            <li class="navigation-list-item"><a href="basket.html">Корзина</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section class="basket">
-        <img class="basket__background" src="deps/img/main-background.jpg" alt="фото цветов">
-        <div class="basket__container">
-            <h1 class="basket__container-title">Моя корзина</h1>
-            <ul class="basket__container__order-list">
-                <li class="basket__container__order-list-card order-card">
-                    <label>
-                        <input class="order-card__checkbox" type="checkbox">
-                        <div class="order-card__custom-checkbox"></div>
-                        <img class="order-card__picture" src="deps/img/goods/phialka_Edee%60s.png" alt="фиалка">
-                        <p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
-                        <p class="order-card__price">372₽</p>
-                    </label>
-                    <div class="order-card__goods-amount">
-                        <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
-                        <p class="order-card__goods-amount__counter">1</p>
-                        <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
-                    </div>
-                </li>
-                <li class="basket__container__order-list-card order-card">
-                    <label>
-                        <input class="order-card__checkbox" type="checkbox">
-                        <div class="order-card__custom-checkbox"></div>
-                        <img class="order-card__picture" src="deps/img/goods/phialka_Edee%60s.png" alt="фиалка">
-                        <p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
-                        <p class="order-card__price">372₽</p>
-                    </label>
-                    <div class="order-card__goods-amount">
-                        <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
-                        <p class="order-card__goods-amount__counter">1</p>
-                        <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
-                    </div>
-                </li>
-                <li class="basket__container__order-list-card order-card">
-                    <label>
-                        <input class="order-card__checkbox" type="checkbox">
-                        <div class="order-card__custom-checkbox"></div>
-                        <img class="order-card__picture" src="deps/img/goods/phialka_Edee%60s.png" alt="фиалка">
-                        <p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
-                        <p class="order-card__price">372₽</p>
-                    </label>
-                    <div class="order-card__goods-amount">
-                        <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
-                        <p class="order-card__goods-amount__counter">1</p>
-                        <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
-                    </div>
-                </li>
-            </ul>
-            <hr>
-            <div class="basket__order-container">
-                <button class="basket__order-container__commit-button">Оформить</button>
-                <div class="basket__order-container__total total">
-                    <h2>Итого:</h2>
-                    <p class="total__price">822₽</p>
-                    <p class="total__goods-amount"><span class="total__goods-amount-counter">2</span> товара</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-<footer class="main-footer">
-    <p>Made by “Бригада Cripples”</p>
-</footer>
+				<li class="navigation-list-item"><a href="basket.html">Корзина</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<img class="basket__background" src="deps/img/main-background.jpg" alt="фото цветов">
+		<section class="basket">
+			<div class="basket__container">
+				<h1 class="basket__container-title">Моя корзина</h1>
+				<ul class="basket__container__order-list">
+					<li class="basket__container__order-list-card order-card">
+						<label>
+							<input class="order-card__checkbox" type="checkbox">
+							<div class="order-card__custom-checkbox"></div>
+							<img class="order-card__picture" src="deps/img/goods/phialka_Edee%60s.png" alt="фиалка">
+							<p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
+							<p class="order-card__price">372₽</p>
+						</label>
+						<div class="order-card__goods-amount">
+							<button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
+							<p class="order-card__goods-amount__counter">1</p>
+							<button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
+						</div>
+					</li>
+					<li class="basket__container__order-list-card order-card">
+						<label>
+							<input class="order-card__checkbox" type="checkbox">
+							<div class="order-card__custom-checkbox"></div>
+							<img class="order-card__picture" src="deps/img/goods/phialka_Edee%60s.png" alt="фиалка">
+							<p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
+							<p class="order-card__price">372₽</p>
+						</label>
+						<div class="order-card__goods-amount">
+							<button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
+							<p class="order-card__goods-amount__counter">1</p>
+							<button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
+						</div>
+					</li>
+					<li class="basket__container__order-list-card order-card">
+						<label>
+							<input class="order-card__checkbox" type="checkbox">
+							<div class="order-card__custom-checkbox"></div>
+							<img class="order-card__picture" src="deps/img/goods/phialka_Edee%60s.png" alt="фиалка">
+							<p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
+							<p class="order-card__price">372₽</p>
+						</label>
+						<div class="order-card__goods-amount">
+							<button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
+							<p class="order-card__goods-amount__counter">1</p>
+							<button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
+						</div>
+					</li>
+				</ul>
+				<hr>
+				<div class="basket__order-container">
+					<button class="basket__order-container__commit-button">Оформить</button>
+					<div class="basket__order-container__total total">
+						<h2>Итого:</h2>
+						<p class="total__price">822₽</p>
+						<p class="total__goods-amount"><span class="total__goods-amount-counter">2</span> товара</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="main-footer">
+		<p>Made by “Бригада Cripples”</p>
+	</footer>
 </body>
+
 </html>
