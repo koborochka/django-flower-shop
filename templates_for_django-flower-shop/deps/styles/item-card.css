@@ -1,0 +1,118 @@
+.item-card{
+    width: 1320px;
+    height: 800px;
+    margin: 30px auto 0;
+    position: relative;
+}
+
+.item-card__background{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    position: absolute;
+    filter: brightness(0.7);
+}
+
+.item-card__container{
+    position: absolute;
+    width: 1185px;
+    height: auto;
+	min-height: 600px;
+    border-radius: 20px;
+    background-color: white;
+
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: row;
+	gap: 20px;
+
+	justify-content: center;
+	align-items: center;
+	padding: 20px 10px;
+}
+
+.item-card__about{
+	width: 620px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.item-card__main-info{
+	display: flex;
+	justify-content: space-between;
+	align-items: last baseline;
+}
+.item-card__title{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42px;
+}
+.item-card__id{
+	font-family: Inter, sans-serif;
+    font-size: 16px;
+    color: #5C9459;
+}
+
+.item-card__price{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+
+    font-family: Inter, sans-serif;
+    align-items: last baseline;
+}
+.item-card__price__new{
+    font-size: 36px;
+    font-weight: 500;
+}
+.item-card__sale{
+    color: #5C9459;
+}
+.item-card__price__old{
+    font-size: 20px;
+    text-decoration: line-through
+}
+
+.item-card__button__add-to-cart{
+	width: 620px;
+	height: 55px;
+
+    margin-top: 0;
+    padding: 0;
+
+    background-color: #5C9459;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    color:white;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+.item-card__button__add-to-cart:hover{
+    background-color: white;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}
+
+.item-card__description__title, .item-card__features__title{
+	margin: 0;
+	margin-bottom: 10px;
+	font-weight: 500;
+	font-size: 24px;
+}
+.item-card__description__content, .item-card__features__content{
+	font-size: 16px;
+}
