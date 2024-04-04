@@ -16,10 +16,15 @@
         <div class="wrapper">
             <button class="personal-cabinet__button-filters filters">Фильтры</button>
             
-            <form action="{% url "catalog:index" slug_url %}" method="get" class="category-header__dropdown-filters visually-hidden">
+            <form action="{% if request.GET.q %}{% url "catalog:search" %}{% else %}{% url "catalog:index" slug_url %}{% endif %}" method="get" class="category-header__dropdown-filters visually-hidden">
                 <div class="category-header__dropdown-filters__filter-item filter-item">
                     <label>
                         <input class="filter-item__checkbox filter-box" type="checkbox" name="on_sale" value="on" {% if request.GET.on_sale == 'on' %}checked{% endif %}>
+                        
+                        {% if request.GET.q %}
+                            <input type="hidden" name="q" value="{{ request.GET.q }}">
+                        {% endif %}
+                        
                         <div class="filter-item__custom-checkbox custom-filter-box"></div>
                         <p class="filter-item__filter-name">Товары по акции</p>
                     </label>

@@ -4,7 +4,8 @@
   "pk": 4,
   "fields": {
     "name": "Цветущие растения",
-    "slug": "cvetushie-rasteniya"
+    "slug": "cvetushie-rasteniya",
+    "image": "сategories_images/blooming.png"
   }
 },
 {
@@ -12,7 +13,8 @@
   "pk": 5,
   "fields": {
     "name": "Лиственные растения",
-    "slug": "listvennye-rasteniya"
+    "slug": "listvennye-rasteniya",
+    "image": "сategories_images/deciduous.png"
   }
 },
 {
@@ -20,7 +22,8 @@
   "pk": 6,
   "fields": {
     "name": "Плодовые растения",
-    "slug": "plodovye-rasteniya"
+    "slug": "plodovye-rasteniya",
+    "image": "сategories_images/fruit.png"
   }
 },
 {
@@ -28,7 +31,8 @@
   "pk": 7,
   "fields": {
     "name": "Кактусы и суккуленты",
-    "slug": "kaktusy-i-sukkulenty"
+    "slug": "kaktusy-i-sukkulenty",
+    "image": "сategories_images/cactuses.png"
   }
 },
 {
@@ -36,7 +40,8 @@
   "pk": 8,
   "fields": {
     "name": "Горшки и кашпо",
-    "slug": "gorshki-i-kashpo"
+    "slug": "gorshki-i-kashpo",
+    "image": "сategories_images/pots.png"
   }
 }
 ]

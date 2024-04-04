@@ -23,9 +23,12 @@
         <li class="navigation-list-item"><a href="{% url "main:about" %}">О нас</a></li>
 
         <li class="navigation-list-item search">
-          <label>
-            <input class="site-navigation__form-input-search" placeholder="Поиск">
-          </label>
+
+          <form role="search" action="{% url "catalog:search" %}" method="get">
+            <input class="site-navigation__form-input-search" name="q" placeholder="Поиск">
+            <button class="" type="submit">Поиск</button>
+          </form>
+
         </li>
 
         <li class="navigation-list-item personal-cabinet">
