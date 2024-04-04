@@ -15,40 +15,47 @@
 
         <div class="wrapper">
             <button class="personal-cabinet__button-filters filters">Фильтры</button>
-            <div class="category-header__dropdown-filters visually-hidden">
+            
+            <form action="{% url "catalog:index" slug_url %}" method="get" class="category-header__dropdown-filters visually-hidden">
                 <div class="category-header__dropdown-filters__filter-item filter-item">
                     <label>
-                        <input class="filter-item__checkbox filter-box" type="checkbox" name="sale" value="sale">
+                        <input class="filter-item__checkbox filter-box" type="checkbox" name="on_sale" value="on" {% if request.GET.on_sale == 'on' %}checked{% endif %}>
                         <div class="filter-item__custom-checkbox custom-filter-box"></div>
                         <p class="filter-item__filter-name">Товары по акции</p>
                     </label>
                 </div>
 
                 <h3 class="category-header__dropdown-filters__title">Сортировать:</h3>
+
                 <ul class="category-header__dropdown-filters__filter-list filter-list">
-                <li class="filter-list__filter-item filter-item">
-                    <label>
-                    <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="default" checked>
-                    <div class="filter-item__custom-radiobutton custom-filter-box"></div>
-                    <p class="filter-item__filter-name">По умолчанию</p>
-                    </label>
-                </li>
-                <li class="filter-list__filter-item filter-item">
-                    <label>
-                    <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="increase">
-                    <div class="filter-item__custom-radiobutton custom-filter-box"></div>
-                    <p class="filter-item__filter-name">Увеличение цены</p>
-                    </label>
-                </li>
-                <li class="filter-list__filter-item filter-item">
-                    <label>
-                    <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="decrease">
-                    <div class="filter-item__custom-radiobutton custom-filter-box"></div>
-                    <p class="filter-item__filter-name">Уменьшение цены</p>
-                    </label>
-                </li>
+                    <li class="filter-list__filter-item filter-item">
+                        <label>
+                        <input class="filter-item__radiobutton filter-box" type="radio" name="order_by" value="default" 
+                        {% if request.GET.order_by or request.GET.order_by == 'default' %}checked{% endif %}>
+                        <div class="filter-item__custom-radiobutton custom-filter-box"></div>
+                        <p class="filter-item__filter-name">По умолчанию</p>
+                        </label>
+                    </li>
+                    <li class="filter-list__filter-item filter-item">
+                        <label>
+                        <input class="filter-item__radiobutton filter-box" type="radio" name="order_by" value="price" 
+                        {% if request.GET.order_by == 'price' %}checked{% endif %}>
+                        <div class="filter-item__custom-radiobutton custom-filter-box"></div>
+                        <p class="filter-item__filter-name">Увеличение цены</p>
+                        </label>
+                    </li>
+                    <li class="filter-list__filter-item filter-item">
+                        <label>
+                        <input class="filter-item__radiobutton filter-box" type="radio" name="order_by" value="-price" 
+                        {% if request.GET.order_by == '-price' %}checked{% endif %}>
+                        <div class="filter-item__custom-radiobutton custom-filter-box"></div>
+                        <p class="filter-item__filter-name">Уменьшение цены</p>
+                        </label>
+                    </li>
                 </ul>
-            </div>
+
+                <button type="submit" class="">Применить</button>
+            </form>
         </div>
     </section>
 
