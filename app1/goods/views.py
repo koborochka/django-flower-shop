@@ -26,7 +26,7 @@ def catalog(request, category_slug=None):
     if order_by and order_by != "default":
         goods = goods.order_by(order_by)
 
-    goods = get_list_or_404(goods);
+    # goods = get_list_or_404(goods);
 
     context = {
         "title": "Floral - Каталог",

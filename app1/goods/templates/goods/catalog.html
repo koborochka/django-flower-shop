@@ -66,6 +66,12 @@
 
     <section class="goods">
         <ul class="goods-category-list">
+            {% if not goods %}
+                <link rel="stylesheet" href="{% static "deps/styles/footer.css" %}">
+                <h2 class="mt-4">По запросу ничего не найдено</h2>
+            {% else %}
+            {% endif %}
+
             {% for product in goods %}
                 <li class="goods-category-list__item">
 
@@ -73,12 +79,20 @@
                         {% if product.image %}
                             <img src ="{{ product.image.url }}" height="250" width="250" alt="{{ product.name }}">
                         {% else %}
-                            <img src ="{% static "deps/img/not-found-image.jpg" %}" height="250" width="250" alt="{{ product.name }}">
+                            <img src ="{% static "deps/img/not-found-image.jpg" %}" height="250" width="250" alt="product.name">
                         {% endif %}
                     </a>
 
                     <p class="goods-info__id">Арт. {{ product.display_id }}</p>
-                    <p class="goods-info__title">{{ product.name|truncatechars:22 }}</p>
+                    <p class="goods-info__title">
+                        {% autoescape off %}
+                            {% if product.headline %}
+                            {{ product.headline }}
+                            {% else %}
+                            {{ product.name|truncatechars:22 }}
+                            {% endif %}
+                        {% endautoescape %}
+                    </p>
 
                     <div class="goods-price">
                         {% if product.discount != 0 %}
