@@ -1,163 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Floral</title>
-  <link rel="stylesheet" href="deps/styles/style.css">
-  <link rel="stylesheet" href="deps/styles/catalog.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="deps/scripts/script.js" defer></script>
-  <script src="deps/scripts/catalog.js" defer></script>
+	<meta charset="UTF-8">
+	<title>Floral</title>
+	<link rel="stylesheet" href="deps/styles/style.css">
+	<link rel="stylesheet" href="deps/styles/catalog.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<script src="deps/scripts/script.js" defer></script>
+	<script src="deps/scripts/catalog.js" defer></script>
 </head>
+
 <body>
-  <header class="main-header">
-    <nav class="main-navigation">
-      <a class="main-navigation__logo" href="index.html">
-        <img src="deps/icons/logo-black.svg" alt="логотип компании">
-      </a>
-      <ul class="main-navigation__navigation-list">
-        <li class="navigation-list-item"><a href="#">О нас</a></li>
+	<header class="main-header">
+		<nav class="main-navigation">
+			<a class="main-navigation__logo" href="index.html">
+				<img src="deps/icons/logo-black.svg" alt="логотип компании">
+			</a>
+			<ul class="main-navigation__navigation-list">
+				<li class="navigation-list-item"><a href="#">О нас</a></li>
 
-        <li class="navigation-list-item search">
-          <label>
-            <input class="site-navigation__form-input-search" placeholder="Поиск">
-          </label>
-        </li>
+				<li class="navigation-list-item search">
+					<label>
+						<input class="site-navigation__form-input-search" placeholder="Поиск">
+					</label>
+				</li>
 
-        <li class="navigation-list-item personal-cabinet">
-          <button class="personal-cabinet__button">
-            Личный кабинет
-          </button>
-          <ul class="main-navigation__dropdown-menu visually-hidden">
-            <li class="main-navigation__dropdown-menu-item">
-              <a href="my-profile.html">Мой профиль</a>
-            </li>
-            <li class="main-navigation__dropdown-menu-item">
-              <a href="authorization.html">Войти</a>
-            </li>
-            <li class="main-navigation__dropdown-menu-item">
-              <a href="#">Выйти</a>
-            </li>
-          </ul>
-        </li>
+				<li class="navigation-list-item personal-cabinet">
+					<button class="personal-cabinet__button">
+						Личный кабинет
+					</button>
+					<ul class="main-navigation__dropdown-menu visually-hidden">
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="my-profile.html">Мой профиль</a>
+						</li>
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="authorization.html">Войти</a>
+						</li>
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="#">Выйти</a>
+						</li>
+					</ul>
+				</li>
 
-        <li class="navigation-list-item"><a href="basket.html">Корзина</a></li>
-      </ul>
-    </nav>
-  </header>
+				<li class="navigation-list-item"><a href="basket.html">Корзина</a></li>
+			</ul>
+		</nav>
+	</header>
 
-  <main>
-      <section class="category-header">
-        <h2 class="category-heading">Название категории</h2>
-        <div class="wrapper">
-          <button class="personal-cabinet__button-filters filters">Фильтры</button>
-          <div class="category-header__dropdown-filters visually-hidden">
-            <div class="category-header__dropdown-filters__filter-item filter-item">
-              <label>
-                <input class="filter-item__checkbox filter-box" type="checkbox" name="sale" value="sale">
-                <div class="filter-item__custom-checkbox custom-filter-box"></div>
-                <p class="filter-item__filter-name">Товары по акции</p>
-              </label>
-            </div>
-            <h3 class="category-header__dropdown-filters__title">Сортировать:</h3>
-            <ul class="category-header__dropdown-filters__filter-list filter-list">
-              <li class="filter-list__filter-item filter-item">
-                <label>
-                  <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="default" checked>
-                  <div class="filter-item__custom-radiobutton custom-filter-box"></div>
-                  <p class="filter-item__filter-name">По умолчанию</p>
-                </label>
-              </li>
-              <li class="filter-list__filter-item filter-item">
-                <label>
-                  <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="increase">
-                  <div class="filter-item__custom-radiobutton custom-filter-box"></div>
-                  <p class="filter-item__filter-name">Увеличение цены</p>
-                </label>
-              </li>
-              <li class="filter-list__filter-item filter-item">
-                <label>
-                  <input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="decrease">
-                  <div class="filter-item__custom-radiobutton custom-filter-box"></div>
-                  <p class="filter-item__filter-name">Уменьшение цены</p>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+	<main>
+		<section class="category-header">
+			<h2 class="category-heading">Название категории</h2>
+			<div class="wrapper">
+				<button class="personal-cabinet__button-filters filters">Фильтры</button>
+				<div class="category-header__dropdown-filters visually-hidden">
+					<div class="category-header__dropdown-filters__filter-item filter-item">
+						<label>
+							<input class="filter-item__checkbox filter-box" type="checkbox" name="sale" value="sale">
+							<div class="filter-item__custom-checkbox custom-filter-box"></div>
+							<p class="filter-item__filter-name">Товары по акции</p>
+						</label>
+					</div>
+					<h3 class="category-header__dropdown-filters__title">Сортировать:</h3>
+					<ul class="category-header__dropdown-filters__filter-list filter-list">
+						<li class="filter-list__filter-item filter-item">
+							<label>
+								<input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="default" checked>
+								<div class="filter-item__custom-radiobutton custom-filter-box"></div>
+								<p class="filter-item__filter-name">По умолчанию</p>
+							</label>
+						</li>
+						<li class="filter-list__filter-item filter-item">
+							<label>
+								<input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="increase">
+								<div class="filter-item__custom-radiobutton custom-filter-box"></div>
+								<p class="filter-item__filter-name">Увеличение цены</p>
+							</label>
+						</li>
+						<li class="filter-list__filter-item filter-item">
+							<label>
+								<input class="filter-item__radiobutton filter-box" type="radio" name="sort" value="decrease">
+								<div class="filter-item__custom-radiobutton custom-filter-box"></div>
+								<p class="filter-item__filter-name">Уменьшение цены</p>
+							</label>
+						</li>
+					</ul>
+					<button type="submit" class="filter-submit-button">Применить</button>
+				</div>
+			</div>
+		</section>
 
-      <section class="goods">
-        <ul class="goods-category-list">
-          <li class="goods-category-list__item">
-            <a href="#">
-              <img src ="deps/img/goods/kalanchoe_2.png" height="250" width="250" alt="Каланхоэ каландива микс">
-            </a>
-            <p class="goods-info__id">Арт. 529360177</p>
-            <p class="goods-info__title">Каланхоэ каландива микс</p>
-            <div class="goods-price">
-              <p class="goods-price__new goods-sale">585₽</p>
-              <p class="goods-price__old">650₽</p>
-            </div>
-              <button class="button__add-to-cart" type="button">В корзину</button>
-          </li>
+		<section class="goods">
+			<ul class="goods-category-list">
+				<li class="goods-category-list__item">
+					<a href="#">
+						<img src="deps/img/goods/kalanchoe_2.png" height="250" width="250" alt="Каланхоэ каландива микс">
+					</a>
+					<p class="goods-info__id">Арт. 529360177</p>
+					<p class="goods-info__title">Каланхоэ каландива микс</p>
+					<div class="goods-price">
+						<p class="goods-price__new goods-sale">585₽</p>
+						<p class="goods-price__old">650₽</p>
+					</div>
+					<button class="button__add-to-cart" type="button">В корзину</button>
+				</li>
 
-          <li class="goods-category-list__item">
-            <a href="#">
-              <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-              <p class="goods-info__id">Арт. 126383293</p>
-              <p class="goods-info__title">Каланхое махровый микс</p>
-              <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-              </div>
-              <button class="button__add-to-cart" type="button">В корзину</button>
-          </li>
+				<li class="goods-category-list__item">
+					<a href="#">
+						<img src="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+					</a>
+					<p class="goods-info__id">Арт. 126383293</p>
+					<p class="goods-info__title">Каланхое махровый микс</p>
+					<div class="goods-price">
+						<p class="goods-price__new">585₽</p>
+						<p class="goods-price__old"></p>
+					</div>
+					<button class="button__add-to-cart" type="button">В корзину</button>
+				</li>
 
-          <li class="goods-category-list__item">
-            <a href="#">
-              <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-              <p class="goods-info__id">Арт. 126383293</p>
-              <p class="goods-info__title">Каланхое махровый микс</p>
-              <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-              </div>
-              <button class="button__add-to-cart" type="button">В корзину</button>
-          </li>
+				<li class="goods-category-list__item">
+					<a href="#">
+						<img src="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+					</a>
+					<p class="goods-info__id">Арт. 126383293</p>
+					<p class="goods-info__title">Каланхое махровый микс</p>
+					<div class="goods-price">
+						<p class="goods-price__new">585₽</p>
+						<p class="goods-price__old"></p>
+					</div>
+					<button class="button__add-to-cart" type="button">В корзину</button>
+				</li>
 
-          <li class="goods-category-list__item">
-            <a href="#">
-              <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-              <p class="goods-info__id">Арт. 126383293</p>
-              <p class="goods-info__title">Каланхое махровый микс</p>
-              <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-              </div>
-              <button class="button__add-to-cart" type="button">В корзину</button>
-          </li>
+				<li class="goods-category-list__item">
+					<a href="#">
+						<img src="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+					</a>
+					<p class="goods-info__id">Арт. 126383293</p>
+					<p class="goods-info__title">Каланхое махровый микс</p>
+					<div class="goods-price">
+						<p class="goods-price__new">585₽</p>
+						<p class="goods-price__old"></p>
+					</div>
+					<button class="button__add-to-cart" type="button">В корзину</button>
+				</li>
 
-          <li class="goods-category-list__item">
-            <a href="#">
-              <img src ="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
-            </a>
-              <p class="goods-info__id">Арт. 126383293</p>
-              <p class="goods-info__title">Каланхое махровый микс</p>
-              <div class="goods-price">
-                <p class="goods-price__new">585₽</p>
-                <p class="goods-price__old"></p>
-              </div>
-              <button class="button__add-to-cart" type="button">В корзину</button>
-          </li>
-        </ul>
-      </section>
+				<li class="goods-category-list__item">
+					<a href="#">
+						<img src="deps/img/goods/kalanchoe_1.png" height="250" width="250" alt="Каланхое махровый микс">
+					</a>
+					<p class="goods-info__id">Арт. 126383293</p>
+					<p class="goods-info__title">Каланхое махровый микс</p>
+					<div class="goods-price">
+						<p class="goods-price__new">585₽</p>
+						<p class="goods-price__old"></p>
+					</div>
+					<button class="button__add-to-cart" type="button">В корзину</button>
+				</li>
+			</ul>
+		</section>
 
-  </main>
-  <footer class="main-footer">
-    <p>Made by “Бригада Cripples”</p>
-  </footer>
+	</main>
+	<footer class="main-footer">
+		<p>Made by “Бригада Cripples”</p>
+	</footer>
 </body>
