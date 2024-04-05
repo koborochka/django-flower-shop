@@ -9,6 +9,7 @@
   {% block css %}{% endblock %}
   <link rel="stylesheet" href="{% static "deps/styles/style.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="{% static "deps/scripts/script.js" %}" defer></script>
   {% block js %}{% endblock %}
 </head>
@@ -24,9 +25,9 @@
 
         <li class="navigation-list-item search">
 
-          <form role="search" action="{% url "catalog:search" %}" method="get">
+          <form role="search" class="navigation-list-item__form" action="{% url "catalog:search" %}" method="get">
             <input class="site-navigation__form-input-search" name="q" placeholder="Поиск">
-            <button class="" type="submit">Поиск</button>
+            <button class="search-submit__button" type="submit">Поиск</button>
           </form>
 
         </li>
@@ -37,13 +38,13 @@
           </button>
           <ul class="main-navigation__dropdown-menu visually-hidden">
             <li class="main-navigation__dropdown-menu-item">
-              <a href="my-profile.html">Мой профиль</a>
+              <a href="{% url "user:profile" %}">Мой профиль</a>
             </li>
             <li class="main-navigation__dropdown-menu-item">
-              <a href="authorization.html">Войти</a>
+              <a href="{% url "user:login" %}">Войти</a>
             </li>
             <li class="main-navigation__dropdown-menu-item">
-              <a href="#">Выйти</a>
+              <a href="{% url "user:logout" %}">Выйти</a>
             </li>
           </ul>
         </li>

@@ -48,19 +48,41 @@
 .category-header__dropdown-filters{
     margin-top: 10px;
     width: 255px;
-    height: 240px;
+    height: 300px;
     background-color: white;
     box-sizing: content-box;
     position: absolute;
     padding: 10px;
-
     border-radius: 10px;
     border: 1px solid black;
-
     align-items: start;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.filter-submit-button{
+	width: 150px;
+	height: 55px;
+
+    margin-top: 0;
+    padding: 0;
+
+    background-color: #5C9459;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    color:white;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+.filter-submit-button:hover{
+	background-color: white;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
 }
 .visually-hidden{
     display: none;
