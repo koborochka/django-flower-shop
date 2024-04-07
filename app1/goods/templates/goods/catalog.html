@@ -1,55 +1,113 @@
-{% extends "main/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static "deps/styles/catalog.css" %}">
 {% endblock %}
 
+{% block js %}
+    <script src="{% static "deps/scripts/catalog.js" %}" defer></script>
+{% endblock js %}
+
 {% block content %}
-    <main>
-        <section class="category-header">
+    <section class="category-header">
         <h2 class="category-heading">Название категории</h2>
-        <div class="navigation-list-item">
-            <p class="personal-cabinet__button-filters filters">Фильтры</p>
-            <!-- <ul class="category-heading__dropdown-filters">
-            <li class="category-heading__dropdown-filters-item">Доставка и оплата</li>
-            <li class="category-heading__dropdown-filters-item">Контактная информация</li>
-            <li class="category-heading__dropdown-filters-item">Про нас</li>
-            </ul> -->
-        </div>
-        </section>
 
-        <section class="goods">
-            <ul class="goods-category-list">
-                {% for product in goods %}
-                    <li class="goods-category-list__item">
-
-                        <a href="{% url "catalog:product" product.slug %}">
-                            {% if product.image %}
-                                <img src ="{{ product.image.url }}" height="250" width="250" alt="{{ product.name }}">
-                            {% else %}
-                                <img src ="{% static "deps/img/not-found-image.jpg" %}" height="250" width="250" alt="{{ product.name }}">
-                            {% endif %}
-                        </a>
-
-                        <p class="goods-info__id">Арт. {{ product.display_id }}</p>
-                        <p class="goods-info__title">{{ product.name }}</p>
-
-                        <div class="goods-price">
-                            {% if product.discount != 0 %}
-                                <p class="goods-price__new goods-sale">{{ product.sell_price }}</p>
-                                <p class="goods-price__old">{{ product.price }}</p>
-                            {% else %}
-                                <p class="goods-price__new">{{ product.price }}</p>
-                            {% endif %}
-                        </div>
+        <div class="wrapper">
+            <button class="personal-cabinet__button-filters filters">Фильтры</button>
+            
+            <form action="{% if request.GET.q %}{% url "catalog:search" %}{% else %}{% url "catalog:index" slug_url %}{% endif %}" method="get" class="category-header__dropdown-filters visually-hidden">
+                <div class="category-header__dropdown-filters__filter-item filter-item">
+                    <label>
+                        <input class="filter-item__checkbox filter-box" type="checkbox" name="on_sale" value="on" {% if request.GET.on_sale == 'on' %}checked{% endif %}>
                         
-                        <button class="button__add-to-cart" type="button">В корзину</button>
+                        {% if request.GET.q %}
+                            <input type="hidden" name="q" value="{{ request.GET.q }}">
+                        {% endif %}
+                        
+                        <div class="filter-item__custom-checkbox custom-filter-box"></div>
+                        <p class="filter-item__filter-name">Товары по акции</p>
+                    </label>
+                </div>
+
+                <h3 class="category-header__dropdown-filters__title">Сортировать:</h3>
+
+                <ul class="category-header__dropdown-filters__filter-list filter-list">
+                    <li class="filter-list__filter-item filter-item">
+                        <label>
+                        <input class="filter-item__radiobutton filter-box" type="radio" name="order_by" value="default" 
+                        {% if request.GET.order_by or request.GET.order_by == 'default' %}checked{% endif %}>
+                        <div class="filter-item__custom-radiobutton custom-filter-box"></div>
+                        <p class="filter-item__filter-name">По умолчанию</p>
+                        </label>
                     </li>
-                {% endfor %}
-            </ul>
-        </section>
-    </main>
+                    <li class="filter-list__filter-item filter-item">
+                        <label>
+                        <input class="filter-item__radiobutton filter-box" type="radio" name="order_by" value="price" 
+                        {% if request.GET.order_by == 'price' %}checked{% endif %}>
+                        <div class="filter-item__custom-radiobutton custom-filter-box"></div>
+                        <p class="filter-item__filter-name">Увеличение цены</p>
+                        </label>
+                    </li>
+                    <li class="filter-list__filter-item filter-item">
+                        <label>
+                        <input class="filter-item__radiobutton filter-box" type="radio" name="order_by" value="-price" 
+                        {% if request.GET.order_by == '-price' %}checked{% endif %}>
+                        <div class="filter-item__custom-radiobutton custom-filter-box"></div>
+                        <p class="filter-item__filter-name">Уменьшение цены</p>
+                        </label>
+                    </li>
+                </ul>
+
+                <button type="submit" class="filter-submit-button">Применить</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="goods">
+        <ul class="goods-category-list">
+            {% if not goods %}
+                <link rel="stylesheet" href="{% static "deps/styles/footer.css" %}">
+                <h2 class="mt-4">По запросу ничего не найдено</h2>
+            {% else %}
+            {% endif %}
+
+            {% for product in goods %}
+                <li class="goods-category-list__item">
+
+                    <a href="{% url "catalog:product" product.slug %}">
+                        {% if product.image %}
+                            <img src ="{{ product.image.url }}" height="250" width="250" alt="{{ product.name }}">
+                        {% else %}
+                            <img src ="{% static "deps/img/not-found-image.jpg" %}" height="250" width="250" alt="product.name">
+                        {% endif %}
+                    </a>
+
+                    <p class="goods-info__id">Арт. {{ product.display_id }}</p>
+                    <p class="goods-info__title">
+                        {% autoescape off %}
+                            {% if product.headline %}
+                            {{ product.headline }}
+                            {% else %}
+                            {{ product.name|truncatechars:22 }}
+                            {% endif %}
+                        {% endautoescape %}
+                    </p>
+
+                    <div class="goods-price">
+                        {% if product.discount != 0 %}
+                            <p class="goods-price__new goods-sale">{{ product.sell_price }}</p>
+                            <p class="goods-price__old">{{ product.price }}</p>
+                        {% else %}
+                            <p class="goods-price__new">{{ product.price }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <button class="button__add-to-cart" type="button">В корзину</button>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}
 
 {% block footer %}

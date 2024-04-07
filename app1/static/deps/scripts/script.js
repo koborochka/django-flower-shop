@@ -3,5 +3,4 @@ let personalCabinetMenu = document.querySelector('.main-navigation__dropdown-men
 personalCabinetButton.onclick = function() {
     personalCabinetMenu.classList.toggle('visually-hidden');
     personalCabinetMenu.classList.toggle('visually-shown');
-
 };
