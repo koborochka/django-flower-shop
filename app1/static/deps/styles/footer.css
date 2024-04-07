@@ -1,0 +1,14 @@
+.main-footer{
+    height: 40px;
+    background-color: #E1E7E0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}

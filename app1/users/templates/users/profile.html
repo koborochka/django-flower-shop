@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/styles/profile.css" %}">
+{% endblock css %}
+
+
+{% block content %}
+    <img class="my-profile__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
+    <section class="my-profile">
+        <div class="my-profile__container">
+            <div class="my-profile__info">
+                <h1 class="my-profile__info-title">Мой профиль</h1>
+                <form class="my-profile__info-container info-container">
+                    <div class="info-container__input-section">
+                        <div class="wrapper">
+                            <label for="name" class="form-label">Имя*</label>
+                            <input type="text" class="form-input" id="name" placeholder="Введите имя" required>
+                        </div>
+                        <div class="wrapper">
+                            <label for="password" class="form-label">Пароль*</label>
+                            <input type="password" class="form-input" id="password" placeholder="Введите пароль" required>
+                        </div>
+                        <div class="wrapper">
+                            <label for="username" class="form-label">Имя пользователя*</label>
+                            <input type="text" class="form-input" id="username" placeholder="Введите имя пользователя" required>
+                        </div>
+                        <div class="wrapper">
+                            <label for="email" class="form-label">Email*</label>
+                            <input type="text" class="form-input" id="email" placeholder="Введите ваш Email" required>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" class="my-profile__info__save-button">Сохранить</button>
+            </div>
+
+            <div class="my-profile__my-orders">
+                <h2 class="my-profile__my-orders-title">Мои заказы</h2>
+                <ul class="my-profile__my-orders__order-list">
+                    <li class="my-profile__my-orders__order-form order-form  order-form_brief">
+                        <div class="order-form__main-info">
+                            <div class="wrapper">
+                                <p>Заказ <span class="order-form__main-info__order-number">1251</span></p>
+                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">17.03.2024 9:04</data>
+                            </div>
+                            <div class="wrapper">
+                                <p class="order-form__state  order-form__state_processed">В обработке</p>
+                                <button class="order-form__expand-button"></button>
+                            </div>
+                        </div>
+                        <div class="order-form__full-info  order-form__full-info_visually-hidden">
+                            <ul class="order-form__orders-list">
+                            </ul>
+                            <hr>
+                            <div class='wrapper'>
+                                <h3>Итого:</h3>
+                                <p class="order-form__full-info__total-price"></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="my-profile__my-orders__order-form  order-form  order-form_full">
+                        <div class="order-form__main-info">
+                            <div class="wrapper">
+                                <p>Заказ <span class="order-form__main-info__order-number">1249</span></p>
+                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">17.03.2024 9:04</data>
+                            </div>
+                            <div class="wrapper">
+                                <p class="order-form__state order-form__state_processed">В обработке</p>
+                                <button class="order-form__expand-button order-form__expand-button_active"></button>
+                            </div>
+                        </div>
+                        <div class="order-form__full-info">
+                            <ul class="order-form__full-info__orders-list">
+                                <li class="order-form__full-info__orders-list__goods goods">
+                                    <p class="goods__name">Гортензия</p>
+                                    <p class="goods__amount">1</p>
+                                    <p class="goods__price-per-product">25.00$</p>
+                                    <p class="goods__final-price">25.00$</p>
+                                </li>
+                                <li class="order-form__full-info__orders-list__goods goods">
+                                    <p class="goods__name">Фикус</p>
+                                    <p class="goods__amount">2</p>
+                                    <p class="goods__price-per-product">20.00$</p>
+                                    <p class="goods__final-price">40.00$</p>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class='wrapper'>
+                                <h3>Итого:</h3>
+                                <p class="order-form__full-info__total-price">65.00$</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="my-profile__my-orders__order-form order-form  order-form_brief">
+                        <div class="order-form__main-info">
+                            <div class="wrapper">
+                                <p>Заказ <span class="order-form__main-info__order-number">1251</span></p>
+                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">17.03.2024 9:04</data>
+                            </div>
+                            <div class="wrapper">
+                                <p class="order-form__state order-form__state_received">Получен</p>
+                                <button class="order-form__expand-button"></button>
+                            </div>
+                        </div>
+                        <div class="order-form__full-info  order-form__full-info_visually-hidden">
+                            <ul class="order-form__orders-list">
+                            </ul>
+                            <hr>
+                            <div class='wrapper'>
+                                <h3>Итого:</h3>
+                                <p class="order-form__full-info__total-price"></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
