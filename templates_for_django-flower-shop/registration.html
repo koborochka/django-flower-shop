@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="deps/styles/style.css">
+	<link rel="stylesheet" href="deps/styles/registration.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<script src="deps/scripts/script.js" defer></script>
+</head>
+<body>
+<header class="main-header">
+		<nav class="main-navigation">
+			<a class="main-navigation__logo" href="index.html">
+				<img src="deps/icons/logo-black.svg" alt="логотип компании">
+			</a>
+			<ul class="main-navigation__navigation-list">
+				<li class="navigation-list-item"><a href="#">О нас</a></li>
+
+				<li class="navigation-list-item search">
+					<label>
+						<input class="site-navigation__form-input-search" placeholder="Поиск">
+					</label>
+				</li>
+
+				<li class="navigation-list-item personal-cabinet">
+					<button class="personal-cabinet__button">
+						Личный кабинет
+					</button>
+					<ul class="main-navigation__dropdown-menu visually-hidden">
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="my-profile.html">Мой профиль</a>
+						</li>
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="authorization.html">Войти</a>
+						</li>
+						<li class="main-navigation__dropdown-menu-item">
+							<a href="#">Выйти</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="navigation-list-item"><a href="basket.html">Корзина</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<img class="registration__background" src="deps/img/main-background.jpg" alt="фото цветов">
+		<section class="registration">
+			<div class="registration__container">
+				<h1 class="registration__container-title">Регистрация</h1>
+				<form class="registration__container__login-form login-form">
+					<div class="login-form__input-section">
+						<div class="wrapper">
+							<label for="name" class="form-label">Имя</label>
+							<input type="text" class="form-input" id="name" placeholder="Введите имя" required>
+						</div>
+						<div class="wrapper">
+							<label for="surname" class="form-label">Фамилия</label>
+							<input type="text" class="form-input" id="surname" placeholder="Введите фамилию" required>
+						</div>
+						<div class="wrapper">
+							<label for="username" class="form-label">Имя пользователя</label>
+							<input type="text" class="form-input" id="username" placeholder="Введите имя пользователя" required>
+						</div>
+						<div class="wrapper">
+							<label for="email" class="form-label">Email</label>
+							<input type="password" class="form-input" id="email" placeholder="Введите email" required>
+						</div>
+						<div class="wrapper">
+							<label for="password" class="form-label">Пароль</label>
+							<input type="password" class="form-input" id="password" placeholder="Введите пароль" required>
+						</div>
+						<div class="wrapper">
+							<label for="password_confirm" class="form-label">Подтверждение пароля</label>
+							<input type="password" class="form-input" id="password_confirm" placeholder="Введите пароль" required>
+						</div>
+					</div>
+					<div class="login-form__wrapper">
+						<button type="submit" class="register-button">Зарегестрироваться</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer class="main-footer">
+		<p>Made by “Бригада Cripples”</p>
+	</footer>
+</body>
+</html>
