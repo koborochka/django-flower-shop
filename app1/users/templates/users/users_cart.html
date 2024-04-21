@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/styles/basket.css" %}">
+{% endblock css %}
+
+{% block content %}
+    {% include "carts/includes/included_cart.html" %}
+{% endblock %}
