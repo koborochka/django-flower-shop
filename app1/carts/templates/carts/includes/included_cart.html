@@ -1,4 +1,8 @@
 {% load static %}
+{% load carts_tags %}
+
+{% user_carts request as carts %}
+
 
 <section class="basket">
     <img class="basket__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
@@ -6,28 +10,32 @@
     <div class="basket__container">
         <h1 class="basket__title">Моя корзина</h1>
         <ul class="basket__container__order-list">
-            <li class="basket__container__order-list-card order-card">
-                <label>
-                    <input class="order-card__checkbox" type="checkbox">
-                    <div class="order-card__custom-checkbox"></div>
-                    <img class="order-card__picture" src="{% static "deps/img/goods/phialka_Edee%60s.png" %}" alt="фиалка">
-                    <p class="order-card__description">Фиалка Edee's Rosebud Trail</p>
-                    <p class="order-card__price">372₽</p>
-                </label>
-                <div class="order-card__goods-amount">
-                    <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
-                    <p class="order-card__goods-amount__counter">1</p>
-                    <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
-                </div>
-            </li>
+
+            {% for cart in carts %}
+                <li class="basket__container__order-list-card order-card">
+                    <label>
+                        <input class="order-card__checkbox" type="checkbox">
+                        <div class="order-card__custom-checkbox"></div>
+                        <img class="order-card__picture" src="{{ cart.product.image.url }}" height="130" width="130"  alt="фиалка">
+                        <p class="order-card__description">{{ cart.product.name }}</p>
+                        <p class="order-card__price">{{cart.products_price}}₽</p>
+                    </label>
+                    <div class="order-card__goods-amount">
+                        <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
+                        <p class="order-card__goods-amount__counter">{{ cart.quantity }}</p>
+                        <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
+                    </div>
+                </li>
+            {% endfor %}
+
         </ul>
         <hr>
         <div class="basket__order-container">
             <button class="basket__order-container__commit-button">Оформить</button>
             <div class="basket__order-container__total total">
                 <h2>Итого:</h2>
-                <p class="total__price">822₽</p>
-                <p class="total__goods-amount"><span class="total__goods-amount-counter">2</span> товара</p>
+                <p class="total__price">{{ carts.total_price }}₽</p>
+                <p class="total__goods-amount"><span class="total__goods-amount-counter">{{ carts.total_quantity }}</span> товара</p>
             </div>
         </div>
     </div>

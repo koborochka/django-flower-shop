@@ -103,10 +103,16 @@
                         {% endif %}
                     </div>
                     
-                    <button class="button__add-to-cart" type="button">В корзину</button>
+                    <a href="{% url 'cart:cart_add' product.slug %}">
+                        <button class="button__add-to-cart" type="button">В корзину</button>
+                    </a>       
                 </li>
             {% endfor %}
         </ul>
+        {% comment %} 
+        мб так
+        {% endcomment %}
+        {% include "carts/includes/included_cart.html" %}
     </section>
 {% endblock %}
 
