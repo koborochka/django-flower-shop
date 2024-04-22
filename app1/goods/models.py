@@ -39,4 +39,4 @@ class Products(models.Model):
     def sell_price(self):
         if self.discount:
             return round(self.price - self.price * self.discount / 100)
-        return self.price
+        return round(self.price)
