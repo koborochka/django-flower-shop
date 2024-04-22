@@ -4,7 +4,7 @@
 {% user_carts request as carts %}
 
 
-<section class="basket">
+<section class="basket" id="cart-items-container">
     <img class="basket__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
     
     <div class="basket__container">
@@ -21,7 +21,7 @@
                         <p class="order-card__price">{{cart.product.sell_price}}₽</p>
                     </label>
                     <div class="order-card__goods-amount">
-                        <a class="" href="{% url "cart:cart_remove" cart.id %}" data-cart-id="">
+                        <a class="" href="{% url "cart:cart_remove" %}" data-cart-id="">
                             <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
                         </a>
                         <p class="order-card__goods-amount__counter">{{ cart.quantity }}</p>
@@ -38,7 +38,12 @@
                 <div class="basket__order-container__total total">
                     <h2>Итого:</h2>
                     <p class="total__price">{{ carts.total_price }}₽</p>
-                    <p class="total__goods-amount"><span class="total__goods-amount-counter">{{ carts.total_quantity }}</span> товара</p>
+                    <p class="total__goods-amount">
+                        <span class="total__goods-amount-counter" id="goods-in-cart-count">
+                            {{ carts.total_quantity }}
+                        </span>
+                         товара
+                    </p>
                 </div>
             </div>
         {% endif %}

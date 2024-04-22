@@ -103,7 +103,9 @@
                         {% endif %}
                     </div>
                     
-                    <a href="{% url 'cart:cart_add' product.slug %}">
+                    <a href="{% url 'cart:cart_add' %}" class="add-to-cart"
+                    data-product-id="{{ product.id }}">
+                        {% csrf_token %}
                         <button class="button__add-to-cart" type="button">В корзину</button>
                     </a>       
                 </li>
