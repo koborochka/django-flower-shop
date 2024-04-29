@@ -22,8 +22,12 @@
                     <p class="item-card__price__old">{{ product.price }}</p>
                 </div>
 
-                <button class="item-card__button__add-to-cart item-card" type="button">В корзину</button>
-
+                <a href="{% url 'cart:cart_add' %}" class="add-to-cart"
+                data-product-id="{{ product.id }}">
+                    {% csrf_token %}
+                    <button class="item-card__button__add-to-cart item-card" type="button">В корзину</button>
+                </a>
+                  
                 <div class="item-card__description">
                     <h2 class="item-card__description__title">Описание</h2>
                     <p class="item-card__description__content">{{ product.description }}</p>

@@ -12,27 +12,42 @@
         <div class="my-profile__container">
             <div class="my-profile__info">
                 <h1 class="my-profile__info-title">Мой профиль</h1>
-                <form class="my-profile__info-container info-container">
+                <form class="my-profile__info-container info-container"
+                action="{% url "users:profile" %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                     <div class="info-container__input-section">
                         <div class="wrapper">
-                            <label for="name" class="form-label">Имя*</label>
-                            <input type="text" class="form-input" id="name" placeholder="Введите имя" required>
+                            <label for="id_first_name" class="form-label">Имя*</label>
+                            <input type="text" class="form-input" id="id_first_name"
+                            name="first_name"
+                            value="{{ form.first_name.value }}"
+                            placeholder="Введите имя" required>
+                        </div>
+
+                        <div class="wrapper">
+                            <label for="id_last_name" class="form-label">Фамилия</label>
+                            <input type="text" class="form-input" id="id_last_name" 
+                            name="last_name"
+                            value="{{ form.last_name.value }}"
+                            placeholder="Введите фамилию" required>
                         </div>
                         <div class="wrapper">
-                            <label for="password" class="form-label">Пароль*</label>
-                            <input type="password" class="form-input" id="password" placeholder="Введите пароль" required>
+                            <label for="id_username" class="form-label">Имя пользователя*</label>
+                            <input type="text" class="form-input" id="id_username"
+                            name="username"
+                            value="{{ form.username.value }}"
+                            placeholder="Введите имя пользователя" required>
                         </div>
                         <div class="wrapper">
-                            <label for="username" class="form-label">Имя пользователя*</label>
-                            <input type="text" class="form-input" id="username" placeholder="Введите имя пользователя" required>
-                        </div>
-                        <div class="wrapper">
-                            <label for="email" class="form-label">Email*</label>
-                            <input type="text" class="form-input" id="email" placeholder="Введите ваш Email" required>
+                            <label for="id_email" class="form-label">Email*</label>
+                            <input type="email" class="form-input" id="id_email" 
+                            name="email"
+                            value="{{ form.email.value }}"
+                            placeholder="Введите ваш Email" required>
                         </div>
                     </div>
+                    <button type="submit" class="my-profile__info__save-button">Сохранить</button>
                 </form>
-                <button type="submit" class="my-profile__info__save-button">Сохранить</button>
             </div>
 
             <div class="my-profile__my-orders">
