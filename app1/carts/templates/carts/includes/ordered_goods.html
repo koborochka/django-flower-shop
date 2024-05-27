@@ -1,0 +1,38 @@
+{% load static %}
+{% load carts_tags %}
+
+{% user_carts request as carts %}
+{% block content %}
+<ul class="basket__container__order-list">
+
+{% for cart in carts %}
+    <li class="basket__container__order-list-card order-card">
+        <label>
+            <input class="order-card__checkbox" type="checkbox">
+            <div class="order-card__custom-checkbox"></div>
+            <img class="order-card__picture" src="{{ cart.product.image.url }}" height="130" width="130"  alt="фиалка">
+            <p class="order-card__description">{{ cart.product.name }}</p>
+            <p class="order-card__price">{{cart.product.sell_price}}₽</p>
+        </label>
+        <div class="order-card__goods-amount">
+
+            <a href="{% url "cart:cart_remove" %}" class="remove-from-cart"
+            data-cart-id="{{ cart.id }}">
+                {% csrf_token %}
+                <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
+            </a>
+
+            <p class="order-card__goods-amount__counter">{{ cart.quantity }}</p>
+
+            <a href="{% url 'cart:cart_add' %}" class="add-to-cart"
+            data-product-id="{{ cart.product.id }}">
+                {% csrf_token %}
+                <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
+            </a>
+
+        </div>
+    </li>
+{% endfor %}
+
+</ul>
+{% endblock %}

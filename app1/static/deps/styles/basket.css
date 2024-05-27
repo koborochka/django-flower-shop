@@ -28,6 +28,8 @@
     transform: translate(-50%, -50%); /* центровка */
     display: flex;
     flex-direction: column;
+
+    overflow: hidden;
 }
 .basket__title{
     margin: 32px auto 0;
@@ -180,6 +182,10 @@ hr{
     color: white;
 
     margin-left: 54px;
+}
+
+.basket__order-container__commit-button:hover{
+    background-color: #5C9000;
 }
 
 h2{
