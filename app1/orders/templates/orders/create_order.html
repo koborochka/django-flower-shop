@@ -16,16 +16,6 @@
         {% user_carts request as carts %}
 
         {% include "carts/includes/ordered_goods.html" %}
-        <!--  сказали удалить нахцй
-        <div class="order__selected-goods__info">
-
-        </div>
-
-        <div class="order__selected-goods__total">
-            <p>Итого <span class="order__selected-goods__total-number"><b>1</b></span> товар(а) на сумму</p>
-            <p class="order__selected-goods__total-number"><b>100.00 $</b></p>
-        </div>
-        -->
         </div>
 
     </div>
@@ -79,6 +69,7 @@
                                 <label class="form-check-label" for="id_requires_delivery">Самовывоз</label>
                             </div>
                         </div>
+                        {%if form.requires_delivery %}
                         <div class="mb-3" id="deliveryAddressField">
                             <label for="id_delivery_address" class="form-label">Адрес
                                 доставки*:</label>
@@ -89,6 +80,7 @@
                                 <div class="alert alert-danger alert-dismissible fade show">{{form.delivery_address.errors}}</div>
                             {% endif %}
                         </div>
+                        {% endif %}
                         <div class="col-md-12 mb-3">
                             <label class="form-label">Способ оплаты: </label>
                             <div class="form-check form-check-inline">

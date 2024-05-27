@@ -8,7 +8,7 @@
 {% for cart in carts %}
     <li class="basket__container__order-list-card order-card">
         <label>
-            <input class="order-card__checkbox" type="checkbox">
+            <input class="order-card__checkbox" type="checkbox" checked>
             <div class="order-card__custom-checkbox"></div>
             <img class="order-card__picture" src="{{ cart.product.image.url }}" height="130" width="130"  alt="фиалка">
             <p class="order-card__description">{{ cart.product.name }}</p>

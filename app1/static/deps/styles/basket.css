@@ -185,7 +185,19 @@ hr{
 }
 
 .basket__order-container__commit-button:hover{
-    background-color: #5C9000;
+    background-color: white;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}
+
+.basket__order-container__commit-button:active{
+    background-color: #5A8459;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
 }
 
 h2{
