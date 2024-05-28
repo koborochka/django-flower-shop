@@ -146,9 +146,6 @@
     background-color: #E0E7DF;
     background-image: url("../icons/expand-button_active.svg");
 }
-.order-form__full-info_visually-hidden{
-    display: none;
-}
 
 .order-form_brief{
     border: 1px solid black;
@@ -202,4 +199,8 @@
 
 h3,p{
     margin: 0;
+}
+
+.order-form_brief .order-form__full-info{
+    display: none;
 }

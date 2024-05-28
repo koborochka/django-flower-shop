@@ -1,15 +1,25 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/styles/about.css" %}">
+{% endblock css %}
+
 
 {% block content %}
-  <main>
-    <section class="hero">
-      <img class="hero__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
-      <img class="hero__logo" src="{% static "deps/icons/logo-white.svg" %}" alt="логотип компании">
-      <h2 class="hero__title">{{ content }}</h2>
-    </section>
-  </main>
+  <section class="about">
+    <img class="about__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
+    <img class="about__logo" src="{% static "deps/icons/logo-white.svg" %}" alt="логотип компании">
+
+    <div class="about__container">
+        <!-- <img class="about__logo" src="deps/icons/logo-white.svg" alt="логотип компании"> -->
+        <p class="about__container-text">Добро пожаловать в "Floral" — ваш уютный уголок зелени и гармонии!<br /> Мы предлагаем широкий ассортимент комнатных растений и цветов, которые наполнят ваш дом свежестью и красотой. В нашем магазине вы найдете растения на любой вкус: от экзотических орхидей и элегантных фикусах до милых суккулентов и воздушных папоротников.</p>
+        <p class="about__container-text">Наша миссия — помочь вам создать зеленый оазис у себя дома, где каждая деталь будет радовать глаз и приносить удовольствие.</p>
+        <p class="about__container-text">Загляните в "Floral" и откройте для себя мир живой природы, который станет частью вашего интерьера и повседневной жизни. Мы ждем вас с нетерпением!</p>
+    </div>
+
+
+  </section>
 {% endblock %}
 
 {% block footer %}

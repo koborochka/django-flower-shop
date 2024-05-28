@@ -178,6 +178,8 @@ hr{
 .basket__order-container{
     display: flex;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 .basket__order-container__total{
     display: flex;
