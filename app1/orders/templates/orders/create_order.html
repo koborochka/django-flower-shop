@@ -3,109 +3,126 @@
 {% load carts_tags %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static "deps/styles/basket.css" %}">
+    <link rel="stylesheet" href="{% static "deps/styles/order.css" %}">
 {% endblock %}
 
 {% block content %}
 
- <section class="order">
-    <div class="order__selected-goods" style="overflow: hidden">
-        <h1>Выбранные товары</h1>
-        <div>
+<img class="order__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
+<section class="order">
+    <div class="order__container">
+        <h1 class="order__container-title">Детали заказа</h1>
+        <form class="order__container__order-form order-form" action="{% url "orders:create_order" %}" method="post">
+        {% csrf_token %}
+            <div class="order-form__input-section">
+                <div class="wrapper">
+                    <label for="id_first_name" class="form-label">Имя</label>
+                    <input type="text" class="form-input" id="id_first_name" placeholder="Введите имя"
+                           value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
+                           name="first_name"
+                           required>
+                    {% if form.first_name.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">{{form.first_name.errors}}</div>
+                    {% endif %}
+                </div>
 
-        {% user_carts request as carts %}
+                <div class="wrapper">
+                    <label for="id_last_name" class="form-label">Фамилия</label>
+                    <input type="text" class="form-input" id="id_last_name" placeholder="Введите фамилию"
+                           value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
+                           name="last_name"
+                           required>
+                    {% if form.last_name.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">{{form.last_name.errors}}</div>
+                    {% endif %}
+                </div>
 
-        {% include "carts/includes/ordered_goods.html" %}
-        </div>
+                <div class="wrapper">
+                    <label for="id_phone_number" class="form-label">Номер телефона</label>
+                    <input type="tel" class="form-input" id="id_phone_number" placeholder="Введите номер телефона"
+                           value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}"
+                           name="phone_number"
+                           required>
+                    {% if form.phone_number.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">{{form.phone_number.errors}}</div>
+                    {% endif %}
+                </div>
 
-    </div>
-
-    <div class="order__details">
-        <h2 class="text-center">Детали заказа</h2>
-        <div class="card mb-3">
-            <div class="card-body">
-                <form action="{% url "orders:create_order" %}" method="post">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="id_first_name" class="form-label">Имя*:</label>
-                            <input type="text" class="form-control" id="id_first_name"
-                                value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
-                                name="first_name" required>
-                            {% if form.first_name.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{form.first_name.errors}}</div>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="id_last_name" class="form-label">Фамилия*:</label>
-                            <input type="text" class="form-control" id="id_last_name" name="last_name"
-                            value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
-                            required>
-                            {% if form.last_name.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{form.last_name.errors}}</div>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="id_phone_number" class="form-label">Номер телефона*:</label>
-                            <input type="text" class="form-control" id="id_phone_number" name="phone_number"
-                                value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}"
-                                placeholder="В формате: XXX-XXX-XX-XX"
-                                required>
-                            {% if form.phone_number.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{form.phone_number.errors}}</div>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="delivery" class="form-label">Способ доставки: </label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="requires_delivery"
-                                    id="id_requires_delivery" value="1" checked>
-                                <label class="form-check-label" for="id_requires_delivery">Нужна
-                                    доставка</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="requires_delivery"
-                                    id="id_requires_delivery" value="0">
-                                <label class="form-check-label" for="id_requires_delivery">Самовывоз</label>
-                            </div>
-                        </div>
-                        {%if form.requires_delivery %}
-                        <div class="mb-3" id="deliveryAddressField">
-                            <label for="id_delivery_address" class="form-label">Адрес
-                                доставки*:</label>
-                            <textarea class="form-control" id="id_delivery_address"
-                                value="{% if form.delivery_address.value %}{{ form.delivery_address.value }}{% endif %}"
-                                name="delivery_address" rows="2"></textarea>
-                            {% if form.delivery_address.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{form.delivery_address.errors}}</div>
-                            {% endif %}
-                        </div>
-                        {% endif %}
-                        <div class="col-md-12 mb-3">
-                            <label class="form-label">Способ оплаты: </label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="payment_on_get"
-                                    id="id_payment_on_get" value="0" checked>
-                                <label class="form-check-label" for="id_payment_on_get">Оплата
-                                    картой</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="payment_on_get"
-                                    id="id_payment_on_get" value="1">
-                                <label class="form-check-label" for="id_payment_on_get">Наличными/картой
-                                    при плучении</label>
-                                {% if form.payment_on_get.errors %}
-                                    <div class="alert alert-danger alert-dismissible fade show">{{form.payment_on_get.errors}}</div>
-                                {% endif %}
-                            </div>
-                        </div>
+                 <div class="wrapper">
+                    <label for="id_requires_delivery" class="form-label">Способ доставки: </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="requires_delivery"
+                            onclick="toggleDeliveryAddressField(true)"
+                            id="id_requires_delivery" value="1">
+                        <label class="form-check-label" for="id_requires_delivery">Нужна
+                            доставка</label>
                     </div>
-                    <button type="submit" class="btn btn-dark">Оформить заказ</button>
-                </form>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="requires_delivery"
+                            onclick="toggleDeliveryAddressField(false)"
+                            id="not_requires_delivery" value="0"
+                               checked>
+                        <label class="form-check-label" for="id_requires_delivery">Самовывоз</label>
+                    </div>
+                 </div>
+
+                <div class="wrapper" id="deliveryAddressField">
+                    <label for="id_delivery_address" class="form-label">Адрес
+                        доставки:</label>
+                    <input class="form-input" id="id_delivery_address"
+                        value="{% if form.delivery_address.value %}{{ form.delivery_address.value }}{% endif %}"
+                        placeholder="Введите адрес доставки"
+                        name="delivery_address" >
+
+                    {% if form.delivery_address.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">{{form.delivery_address.errors}}</div>
+                    {% endif %}
+                </div>
+
+                <div class="wrapper">
+                    <label class="form-label">Способ оплаты: </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="payment_on_get"
+                            id="id_payment_on_get" value="0" checked>
+                        <label class="form-check-label" for="id_payment_on_get">Оплата
+                            картой</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="payment_on_get"
+                            id="id_payment_on_get" value="1">
+                        <label class="form-check-label" for="id_payment_on_get">Наличными/картой
+                            при плучении</label>
+                        {% if form.payment_on_get.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{form.payment_on_get.errors}}</div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-        </div>
+
+
+            {% user_carts request as carts %}
+            <div class="order-form__wrapper">
+                <button type="submit" class="make-order-button">Оформить заказ</button>
+                <div class="order-form__sum-wrapper">
+                    <p>на</p>
+                    <p class="sum">{{ carts.total_price }}₽</p>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
+
+
+<script>
+    function toggleDeliveryAddressField(show) {
+        let field = document.getElementById('deliveryAddressField');
+        if (show) {
+            field.style.display = 'flex';
+        } else {
+            field.style.display = 'none';
+        }
+    }
+</script>
 
 {% endblock  %}
 

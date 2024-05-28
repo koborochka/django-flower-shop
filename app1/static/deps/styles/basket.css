@@ -132,6 +132,23 @@
     color: #A8C2A5;
     background-color: transparent;
 }
+.order-card__goods-amount__button-increase:hover{
+    background-color: white;
+    color: #A8C2A5;
+}
+.order-card__goods-amount__button-increase:active{
+    background-color: white;
+    color: #5C9459;
+}
+.order-card__goods-amount__button-decrease:hover{
+    background-color: #A8C2A5;
+    color: white;
+}
+.order-card__goods-amount__button-decrease:active{
+    border-color: #5C9459;
+    background-color: #5C9459;
+    color: white;
+}
 
 .order-card__goods-amount__counter{
     font-family: Jost, sans-serif;
