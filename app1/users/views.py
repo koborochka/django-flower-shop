@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from carts.models import Cart
-
+from orders.models import Order, OrderItem
 
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth, messages
@@ -79,9 +79,17 @@ def profile(request):
     else:
         form = ProfileForm(instance=request.user)
 
+    orders = Order.objects.filter(user=request.user).prefetch_related(
+        Prefetch(
+            "orderitem_set",
+            queryset=OrderItem.objects.select_related("product"),
+        )
+    ).order_by("-id")
+
     context = {
         'title': 'Floral - Кабинет',
-        'form': form
+        'form': form,
+        'orders': orders
     }
     return render(request, 'users/profile.html', context)
 

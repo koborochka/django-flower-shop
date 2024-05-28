@@ -7,44 +7,17 @@
 <section class="basket" id="cart-items-container">
     <img class="basket__background" src="{% static "deps/img/main-background.jpg" %}" alt="фото цветов">
     
-    <div class="basket__container">
+    <div class="basket__container" style="overflow: hidden">
         <h1 class="basket__title">Моя корзина</h1>
-        <ul class="basket__container__order-list">
 
-            {% for cart in carts %}
-                <li class="basket__container__order-list-card order-card">
-                    <label>
-                        <input class="order-card__checkbox" type="checkbox">
-                        <div class="order-card__custom-checkbox"></div>
-                        <img class="order-card__picture" src="{{ cart.product.image.url }}" height="130" width="130"  alt="фиалка">
-                        <p class="order-card__description">{{ cart.product.name }}</p>
-                        <p class="order-card__price">{{cart.product.sell_price}}₽</p>
-                    </label>
-                    <div class="order-card__goods-amount">
+        {% include "carts/includes/ordered_goods.html" %}
 
-                        <a href="{% url "cart:cart_remove" %}" class="remove-from-cart"
-                        data-cart-id="{{ cart.id }}">
-                            {% csrf_token %}
-                            <button class="order-card__goods-amount__button-decrease goods-amount-button">─</button>
-                        </a>
-
-                        <p class="order-card__goods-amount__counter">{{ cart.quantity }}</p>
-
-                        <a href="{% url 'cart:cart_add' %}" class="add-to-cart"
-                        data-product-id="{{ cart.product.id }}">
-                            {% csrf_token %}
-                            <button class="order-card__goods-amount__button-increase goods-amount-button">╋</button>
-                        </a>
-
-                    </div>
-                </li>
-            {% endfor %}
-
-        </ul>
         <hr>
         {% if carts %}
             <div class="basket__order-container">
-                <button class="basket__order-container__commit-button">Оформить</button>
+                <form action="/orders/create-order" >
+                    <button type="submit" class="basket__order-container__commit-button">Оформить</button>
+                </form>
                 <div class="basket__order-container__total total">
                     <h2>Итого:</h2>
                     <p class="total__price">{{ carts.total_price }}₽</p>

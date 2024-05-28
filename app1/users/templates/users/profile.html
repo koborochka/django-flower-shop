@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load carts_tags %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static "deps/styles/profile.css" %}">
@@ -53,6 +54,7 @@
             <div class="my-profile__my-orders">
                 <h2 class="my-profile__my-orders-title">Мои заказы</h2>
                 <ul class="my-profile__my-orders__order-list">
+                    {% for order in orders %}
                     <li class="my-profile__my-orders__order-form order-form  order-form_brief">
                         <div class="order-form__main-info">
                             <div class="wrapper">
@@ -130,6 +132,7 @@
                             </div>
                         </div>
                     </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

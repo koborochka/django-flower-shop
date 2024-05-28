@@ -194,3 +194,10 @@
     outline: 2px solid #A8C2A5;
     outline-offset: -2px;
 }
+.button__add-to-cart:active{
+    background-color: #5A8459;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}
