@@ -11,7 +11,7 @@
 
 {% block content %}
     <section class="category-header">
-        <h2 class="category-heading">Название категории</h2>
+        <h2 class="category-heading">Доступные товары</h2>
 
         <div class="wrapper">
             <button class="personal-cabinet__button-filters filters">Фильтры</button>
@@ -96,10 +96,10 @@
 
                     <div class="goods-price">
                         {% if product.discount != 0 %}
-                            <p class="goods-price__new goods-sale">{{ product.sell_price }}</p>
-                            <p class="goods-price__old">{{ product.price }}</p>
+                            <p class="goods-price__new goods-sale">{{ product.sell_price|floatformat:0 }}₽</p>
+                            <p class="goods-price__old">{{ product.price|floatformat:0 }}₽</p>
                         {% else %}
-                            <p class="goods-price__new">{{ product.price }}</p>
+                            <p class="goods-price__new">{{ product.price|floatformat:0 }}₽</p>
                         {% endif %}
                     </div>
                     

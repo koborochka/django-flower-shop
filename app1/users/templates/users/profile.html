@@ -55,80 +55,33 @@
                 <h2 class="my-profile__my-orders-title">Мои заказы</h2>
                 <ul class="my-profile__my-orders__order-list">
                     {% for order in orders %}
-                    <li class="my-profile__my-orders__order-form order-form  order-form_brief">
+                    <li class="my-profile__my-orders__order-form  order-form  order-form_brief">
                         <div class="order-form__main-info">
                             <div class="wrapper">
-                                <p>Заказ <span class="order-form__main-info__order-number">1251</span></p>
-                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">17.03.2024 9:04</data>
+                                <p>Заказ №<span class="order-form__main-info__order-number">{{ order.id }}</span></p>
+                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">{{ order.created_timestamp }}</data>
                             </div>
                             <div class="wrapper">
-                                <p class="order-form__state  order-form__state_processed">В обработке</p>
+                                <p class="order-form__state order-form__state_processed">{{order.status}}</p>
                                 <button class="order-form__expand-button"></button>
-                            </div>
-                        </div>
-                        <div class="order-form__full-info  order-form__full-info_visually-hidden">
-                            <ul class="order-form__orders-list">
-                            </ul>
-                            <hr>
-                            <div class='wrapper'>
-                                <h3>Итого:</h3>
-                                <p class="order-form__full-info__total-price"></p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="my-profile__my-orders__order-form  order-form  order-form_full">
-                        <div class="order-form__main-info">
-                            <div class="wrapper">
-                                <p>Заказ <span class="order-form__main-info__order-number">1249</span></p>
-                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">17.03.2024 9:04</data>
-                            </div>
-                            <div class="wrapper">
-                                <p class="order-form__state order-form__state_processed">В обработке</p>
-                                <button class="order-form__expand-button order-form__expand-button_active"></button>
                             </div>
                         </div>
                         <div class="order-form__full-info">
                             <ul class="order-form__full-info__orders-list">
+                                 {% for item in order.orderitem_set.all %}
                                 <li class="order-form__full-info__orders-list__goods goods">
-                                    <p class="goods__name">Гортензия</p>
-                                    <p class="goods__amount">1</p>
-                                    <p class="goods__price-per-product">25.00$</p>
-                                    <p class="goods__final-price">25.00$</p>
+                                    <p class="goods__name">{{ item.product.name }}</p>
+                                    <p class="goods__amount">{{ item.quantity }}</p>
+                                    <p class="goods__price-per-product">{{ item.price|floatformat:0 }}₽</p>
+                                    <p class="goods__final-price">{{ item.products_price }}₽</p>
                                 </li>
-                                <li class="order-form__full-info__orders-list__goods goods">
-                                    <p class="goods__name">Фикус</p>
-                                    <p class="goods__amount">2</p>
-                                    <p class="goods__price-per-product">20.00$</p>
-                                    <p class="goods__final-price">40.00$</p>
-                                </li>
+                                {% endfor %}
                             </ul>
                             <hr>
                             <div class='wrapper'>
                                 <h3>Итого:</h3>
-                                <p class="order-form__full-info__total-price">65.00$</p>
-                            </div>
-                        </div>
-                    </li>
 
-                    <li class="my-profile__my-orders__order-form order-form  order-form_brief">
-                        <div class="order-form__main-info">
-                            <div class="wrapper">
-                                <p>Заказ <span class="order-form__main-info__order-number">1251</span></p>
-                                <data class="order-form__main-info__order-date" value="17.03.2024 9:04">17.03.2024 9:04</data>
-                            </div>
-                            <div class="wrapper">
-                                <p class="order-form__state order-form__state_received">Получен</p>
-                                <button class="order-form__expand-button"></button>
-                            </div>
-                        </div>
-                        <div class="order-form__full-info  order-form__full-info_visually-hidden">
-                            <ul class="order-form__orders-list">
-                            </ul>
-                            <hr>
-                            <div class='wrapper'>
-                                <h3>Итого:</h3>
-                                <p class="order-form__full-info__total-price"></p>
+                                <p class="order-form__full-info__total-price">{{ order.total_price }}₽</p>
                             </div>
                         </div>
                     </li>
@@ -137,4 +90,40 @@
             </div>
         </div>
     </section>
+
+
+<script>
+
+
+// Находим все кнопки с классом order-form__expand-button
+let expandButtons = document.querySelectorAll('.order-form__expand-button');
+
+// Добавляем обработчик события click для каждой кнопки
+expandButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Находим родительский элемент .order-form
+        let orderForm = button.closest('.order-form');
+
+        // Переключаем класс order-form_full на order-form_brief и наоборот
+        if (orderForm.classList.contains('order-form_full')) {
+            orderForm.classList.remove('order-form_full');
+            orderForm.classList.add('order-form_brief');
+        } else {
+            orderForm.classList.remove('order-form_brief');
+            orderForm.classList.add('order-form_full');
+        }
+
+        // Переключаем класс order-form__expand-button_active на кнопке
+        button.classList.toggle('order-form__expand-button_active');
+    });
+});
+
+</script>
+
 {% endblock content %}
+
+{% block footer %}
+    <footer class="main-footer">
+        <p>Made by “Бригада Cripples”</p>
+    </footer>
+{% endblock %}

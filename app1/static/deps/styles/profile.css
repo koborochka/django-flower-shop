@@ -137,17 +137,14 @@
     height: 23px;
     border: none;
     background-color: white;
-    background-image: url("../img/expand-button.svg");
+    background-image: url("../icons/expand-button.svg");
 
     background-position: center;
     background-repeat: no-repeat;
 }
 .order-form__expand-button_active{
     background-color: #E0E7DF;
-    background-image: url("../img/expand-button_active.svg");
-}
-.order-form__full-info_visually-hidden{
-    display: none;
+    background-image: url("../icons/expand-button_active.svg");
 }
 
 .order-form_brief{
@@ -202,4 +199,8 @@
 
 h3,p{
     margin: 0;
+}
+
+.order-form_brief .order-form__full-info{
+    display: none;
 }

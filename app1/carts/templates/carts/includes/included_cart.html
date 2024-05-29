@@ -12,8 +12,9 @@
 
         {% include "carts/includes/ordered_goods.html" %}
 
-        <hr>
+
         {% if carts %}
+        <hr>
             <div class="basket__order-container">
                 <form action="/orders/create-order" >
                     <button type="submit" class="basket__order-container__commit-button">Оформить</button>
