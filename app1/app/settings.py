@@ -126,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Yekaterinburg'
 
 USE_I18N = True
 
@@ -144,13 +144,6 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-if DEBUG:
-    STATICFILES_DIRS=['staticfiles']
-    STATIC_ROOT = None
-else:
-    STATICFILES_DIRS=[]
-    STATIC_ROOT = BASE_DIR / 'staticfiles'
-    
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "staticfiles/deps/pictures"
