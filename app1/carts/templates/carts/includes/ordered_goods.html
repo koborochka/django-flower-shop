@@ -7,13 +7,11 @@
 
 {% for cart in carts %}
     <li class="basket__container__order-list-card order-card">
-        <label for="{{ cart.product.id }}">
-            <input class="order-card__checkbox" type="checkbox" id="{{ cart.product.id }}"checked>
-            <div class="order-card__custom-checkbox"></div>
+        <div class="order-card__container">
             <img class="order-card__picture" src="{{ cart.product.image.url }}" height="130" width="130"  alt="фиалка">
             <p class="order-card__description">{{ cart.product.name }}</p>
             <p class="order-card__price">{{cart.product.sell_price}}₽</p>
-        </label>
+        </div>
         <div class="order-card__goods-amount">
 
             <a href="{% url "cart:cart_remove" %}" class="remove-from-cart"
