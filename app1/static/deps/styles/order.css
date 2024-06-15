@@ -130,3 +130,7 @@
 #deliveryAddressField{
     display: none;
 }
+
+.alert-danger{
+    color: red;
+}

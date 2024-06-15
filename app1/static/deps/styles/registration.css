@@ -94,3 +94,18 @@
     background-color: #5C9459;
     color: white;
 }
+
+.register-button:hover{
+    background-color: white;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}
+.register-button:active{
+    background-color: #A8C2A5;
+    color: white;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}

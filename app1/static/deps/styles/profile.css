@@ -99,6 +99,21 @@
     border: #5C9459 1px solid;
 }
 
+.my-profile__info__save-button:hover{
+    background-color: white;
+    color: #A8C2A5;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}
+.my-profile__info__save-button:active{
+    background-color: #A8C2A5;
+    color: white;
+
+    outline: 2px solid #A8C2A5;
+    outline-offset: -2px;
+}
+
 .my-profile__my-orders__order-list{
     margin: 45px auto 0;
     font-family: Inter, sans-serif;
