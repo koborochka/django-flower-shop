@@ -117,7 +117,7 @@
     border: 2px solid #A8C2A5;
 }
 .filter-box:checked +.custom-filter-box {
-    background-image: url("../icons/checkbox-checked.svg");
+    background-image: url("../icons/checkbox-checked.d2992fe84ac2.svg");
     background-position: center;
     background-repeat: no-repeat;
 }

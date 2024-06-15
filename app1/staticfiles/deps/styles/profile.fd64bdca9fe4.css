@@ -152,14 +152,14 @@
     height: 23px;
     border: none;
     background-color: white;
-    background-image: url("../icons/expand-button.svg");
+    background-image: url("../icons/expand-button.b59a9021673b.svg");
 
     background-position: center;
     background-repeat: no-repeat;
 }
 .order-form__expand-button_active{
     background-color: #E0E7DF;
-    background-image: url("../icons/expand-button_active.svg");
+    background-image: url("../icons/expand-button_active.2de6fb4e1bdb.svg");
 }
 
 .order-form_brief{
