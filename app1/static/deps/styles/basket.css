@@ -150,13 +150,6 @@
     border: 2px solid #A8C2A5;
 }
 
-hr{
-    height: 2px;
-    width: 900px;
-    background-color: #A8C2A5;
-    border: none;
-    margin-top: 30px;
-}
 
 .basket__order-container{
     display: flex;
