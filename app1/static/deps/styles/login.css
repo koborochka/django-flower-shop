@@ -122,3 +122,7 @@
     line-height: 28px;
     text-align: center;
 }
+
+.visually-hidden{
+    display: none;
+}
